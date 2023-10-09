@@ -1,5 +1,7 @@
 # ARM AMS Short Course 2024
 
+## Open Science in the Department of Energy's Atmospheric Radiation Measurement (ARM) User Facility: Connecting State-of-the-Art Models with Diverse Field Campaign Observations
+
 
 [![badge](https://img.shields.io/static/v1.svg?logo=Jupyter&label=ARM+JupyterHub&message=ACE+Environment&color=blue)](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/arm-ams-short-course-2024&urlpath=lab/tree/arm-ams-short-course-2024/notebooks&branch=main)
 [![nightly-build](https://github.com/ARM-Development/arm-ams-short-course-2024/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ARM-Development/arm-ams-short-course-2024/actions/workflows/nightly-build.yaml)
@@ -7,7 +9,7 @@
 
 ## Motivation
 
-Open Science in the Department of Energy's Atmospheric Radiation Measurement (ARM) User Facility: Connecting State-of-the-Art Models with Diverse Field Campaign Observations. ARM Mobile Facilities (AMF) have traveled to locations all over the world, including South America for the Cloud, Aerosol, and Complex Terrain Interactions (CACTI) field campaign, as well as Norway for the Cold-Air Outbreaks in the Marine Boundary Layer Experiment (COMBLE). One of the key goals of these field deployments is to integrate measurements with a spectrum of model datasets, ranging from high-resolution large-eddy simulation to limited-domain nested weather and climate model datasets, furthering the understanding of Earth’s climate system. Within this tutorial, participants will gain a broad understanding of the ARM User Facility, the open data available to the community, the data workbench that allows data-proximate-computing, and science overviews of two ongoing model-observation intercomparison projects. This will be suitable for a broad audience of atmospheric scientists, bringing together both observations and simulations, as well as deep and shallow convection.
+ARM Mobile Facilities (AMF) have traveled to locations all over the world, including South America for the Cloud, Aerosol, and Complex Terrain Interactions (CACTI) field campaign, as well as Norway for the Cold-Air Outbreaks in the Marine Boundary Layer Experiment (COMBLE). One of the key goals of these field deployments is to integrate measurements with a spectrum of model datasets, ranging from high-resolution large-eddy simulation to limited-domain nested weather and climate model datasets, furthering the understanding of Earth’s climate system. Within this tutorial, participants will gain a broad understanding of the ARM User Facility, the open data available to the community, the data workbench that allows data-proximate-computing, and science overviews of two ongoing model-observation intercomparison projects. This will be suitable for a broad audience of atmospheric scientists, bringing together both observations and simulations, as well as deep and shallow convection.
 
 This short course, aimed at a broad audience, will: 
 1. Introduce participants to ARM’s observational facilities and data products and the community of atmospheric scientists that use and produce ARM data. 
