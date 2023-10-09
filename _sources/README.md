@@ -7,7 +7,17 @@
 
 ## Motivation
 
-This hosts content related to the short course titled "Open Science in ARM: Connecting State-of-the-Art Models with Diverse Field Campaign Observations" 
+Open Science in the Department of Energy's Atmospheric Radiation Measurement (ARM) User Facility: Connecting State-of-the-Art Models with Diverse Field Campaign Observations. ARM Mobile Facilities (AMF) have traveled to locations all over the world, including South America for the Cloud, Aerosol, and Complex Terrain Interactions (CACTI) field campaign, as well as Norway for the Cold-Air Outbreaks in the Marine Boundary Layer Experiment (COMBLE). One of the key goals of these field deployments is to integrate measurements with a spectrum of model datasets, ranging from high-resolution large-eddy simulation to limited-domain nested weather and climate model datasets, furthering the understanding of Earth’s climate system. Within this tutorial, participants will gain a broad understanding of the ARM User Facility, the open data available to the community, the data workbench that allows data-proximate-computing, and science overviews of two ongoing model-observation intercomparison projects. This will be suitable for a broad audience of atmospheric scientists, bringing together both observations and simulations, as well as deep and shallow convection.
+
+This short course, aimed at a broad audience, will: 
+Introduce participants to ARM’s observational facilities and data products and the community of atmospheric scientists that use and produce ARM data. 
+Educate attendees on ARM’s measurement suite and data archive.
+Educate attendees on ARM’s (and collaborators') model data.
+Highlight the underlying science behind CACTI and COMBLE.
+Demonstrate how to find and access ARM data.
+Using open source tools, guide attendees in analyzing ARM’s open data in the Python programming language. 
+Highlight several techniques to compare ARM observations and high-resolution model output. 
+
 
 ## Authors
 
@@ -21,7 +31,11 @@ This hosts content related to the short course titled "Open Science in ARM: Conn
 
 ## Structure
 
-(State one or more sections that will comprise the notebook. E.g., _This cookbook is broken up into two main sections - "Foundations" and "Example Workflows."_ Then, describe each section below.)
+To familiarize attendees with ARM, its measurements and data discovery systems.
+1. To highlight the breadth of measurements and science possible through the AMF deployments for CACTI and COMBLE.
+2. To demonstrate a series of analytical methods using open science cookbooks and ARM data, with a focus on robustly comparing observational data with high-resolution simulations. 
+3. To provide an onramp to open science using ARM data and to remove barriers to using ARM data. 
+4. To train attendees on the latest features of ARM tools and open HPC platforms.
 
 ### Observations
 
