@@ -1,9 +1,14 @@
-name: cookbook-dev
+name: arm-ams-short-course-2024-dev
 channels:
   - conda-forge
 dependencies:
   - jupyter-book
   - jupyterlab
+  - xarray
+  - dask
+  - arm_pyart
+  - act-atmos
+  - matplotlib
   - jupyter_server
   - pip
   - pip:
