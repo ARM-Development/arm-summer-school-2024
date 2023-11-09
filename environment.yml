@@ -1,12 +1,17 @@
 name: arm-ams-short-course-2024-dev
 channels:
   - conda-forge
+  - pyviz
 dependencies:
+  - python=3.11
   - jupyter-book
   - jupyterlab
   - xarray
   - dask
   - arm_pyart
+  - holoviews
+  - hvplot
+  - datashader
   - act-atmos
   - matplotlib
   - jupyter_server
