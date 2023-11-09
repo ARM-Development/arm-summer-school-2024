@@ -7,3 +7,6 @@ parts:
   - caption: Radar Data with Py-ART
     chapters:
       - glob: notebooks/pyart/*
+  - caption: Xarray
+    chapters:
+      - glob: notebooks/xarray/*
