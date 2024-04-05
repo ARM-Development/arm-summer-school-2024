@@ -1,103 +1,94 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Py-ART Gridding &#8212; Project Pythia Cookbook Template</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css?v=e502140d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/pyart/pyart-gridding';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="&lt;no title&gt;" href="../xarray/Untitled.html" />
     <link rel="prev" title="Py-ART Basics" href="pyart-basics.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T52X8HNYE8"></script>
-<script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){ dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'G-T52X8HNYE8');
-                </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="5 April 2024"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="132">
-    <div class="container-fluid" id="shim"></div>
-    <div class="container-fluid" id="banner"></div>
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar shadow" id="navbar-main"><div class="container-xl">
-
-  <div id="navbar-start">
-    
-    
-
-<a class="navbar-brand" href="https://projectpythia.org">
-  <img src="../../_static/pythia_logo-white-rtext.svg" class="logo" alt="logo">
-</a>
-
-
-    
-  </div>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
   
-  <div id="navbar-collapsible" class=" collapse navbar-collapse">
-    <div id="navbar-center" class="mr-auto">
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <div class="pst-scroll-pixel-helper"></div>
+    <header class="bd-header navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar shadow" id="navbar-main">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
       
-      <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
+        <div class="navbar-item"><ul id="navbar-main-elements" class="navbar-nav">
   
   <li class="nav-item">
     
@@ -135,322 +126,158 @@ const thebe_selector_output = ".output, .cell_output"
   </li>
   
   
-</ul>
-      </div>
+</ul></div>
       
     </div>
-
-    <div id="navbar-end">
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/ProjectPythia" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/project_pythia" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" rel="noopener" target="_blank" title="YouTube">
-            <span><i class="fab fa-youtube-square"></i></span>
-            <label class="sr-only">YouTube</label>
-          </a>
-        </li>
-      </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-    </nav>
-    <div class="container-xl">
-      <div class="row">
-        
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
-        <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../README.html">
-   ARM AMS Short Course 2024
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Preamble
- </span>
-</p>
+    
+  </div>
+  
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+        
+        
+        
+        <div class="bd-sidebar-primary bd-sidebar">
+          
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><ul id="navbar-main-elements" class="navbar-nav">
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org">Home</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://foundations.projectpythia.org">Foundations</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://cookbooks.projectpythia.org">Cookbooks</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/resource-gallery.html">Resources</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/index.html#join-us">Community</a>
+  </li>
+  
+  
+</ul></div>
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    ARM Summer School 2024
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preamble</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../how-to-cite.html">
-   How to Cite This Cookbook
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to-cite.html">How to Cite This Cookbook</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Radar Data with Py-ART
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Radar Data with Py-ART</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="pyart-basics.html">
-   Py-ART Basics
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Py-ART Gridding
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="pyart-basics.html">Py-ART Basics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Py-ART Gridding</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Xarray
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xarray</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../xarray/xarray-intro.html">
-   Introduction to Xarray
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../xarray/xarray-intro.html">Introduction to Xarray</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by <a href="https://projectpythia.org">Project Pythia</a>.<br><br>
-All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 (CC BY 4.0)</a>.<br><br>
-
-</div>
-
-</div>
-
-        
-
-        <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main"><div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/notebooks/pyart/pyart-gridding.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/ProjectPythia/cookbook-template/"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/ProjectPythia/cookbook-template//issues/new?title=Issue%20on%20page%20%2Fnotebooks/pyart/pyart-gridding.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/ProjectPythia/cookbook-template/edit/main/notebooks/pyart/pyart-gridding.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://binder.projectpythia.org/v2/gh/ProjectPythia/cookbook-template/main?urlpath=lab/tree/notebooks/pyart/pyart-gridding.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
 
         </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> On this page
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#imports">
-   Imports
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-gridding-and-why-is-it-important">
-   What is gridding and why is it important?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#antenna-vs-cartesian-coordinates">
-     Antenna vs. Cartesian Coordinates
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#why-is-gridding-important">
-     Why is Gridding Important?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-overview-of-gridding-with-py-art">
-   An overview of gridding with Py-ART
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#read-in-and-visualize-a-test-dataset">
-     Read in and Visualize a Test Dataset
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setup-our-gridding-routine-with-pyart-map-grid-from-radars">
-     Setup our Gridding Routine with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       pyart.map.grid_from_radars()
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-our-configuration-to-grid-the-data">
-       Use our configuration to grid the data!
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-up-the-grid-object">
-     Plot up the Grid Object
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-a-horizontal-view-of-the-data">
-       Plot a horizontal view of the data
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-a-latitudinal-slice">
-       Plot a Latitudinal Slice
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-with-xarray">
-       Plot with Xarray
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#try-a-different-gridding-technique">
-     Try a Different Gridding Technique
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#whats-next">
-     What’s Next
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resources-and-references">
-   Resources and References
-  </a>
- </li>
-</ul>
+        
+        <main id="main-content" class="bd-main" role="main">
+          
 
-            </nav>
-        </div>
-    </div>
-</div>
-          <div id="main-content" class="row">
-            <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-              
-              <div>
+            <div class="bd-content">
+
+              <div class="bd-article-container">
+
                 
+                  
+                  
+<div id="searchbox"></div>
+                  <article class="bd-article">
+                    
   <p><a class="reference internal" href="../../_images/arm_logo.png"><img alt="ARM Logo" src="../../_images/arm_logo.png" style="width: 500px;" /></a></img></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="py-art-gridding">
-<h1>Py-ART Gridding<a class="headerlink" href="#py-art-gridding" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="py-art-gridding">
+<h1>Py-ART Gridding<a class="headerlink" href="#py-art-gridding" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <hr class="docutils" />
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>Within this notebook, we will cover:</p>
 <ol class="arabic simple">
 <li><p>What is gridding and why is it important?</p></li>
@@ -458,10 +285,10 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <li><p>Test out a different gridding routine</p></li>
 <li><p>Apply Gridding to a Selection of Files</p></li>
 </ol>
-</div>
-<div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<table class="colwidths-auto table">
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepts</p></th>
 <th class="head"><p>Importance</p></th>
@@ -490,10 +317,10 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <ul class="simple">
 <li><p><strong>Time to learn</strong>: 15 minutes</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -526,17 +353,17 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="what-is-gridding-and-why-is-it-important">
-<h2>What is gridding and why is it important?<a class="headerlink" href="#what-is-gridding-and-why-is-it-important" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<div class="section" id="antenna-vs-cartesian-coordinates">
-<h3>Antenna vs. Cartesian Coordinates<a class="headerlink" href="#antenna-vs-cartesian-coordinates" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+</section>
+<section id="what-is-gridding-and-why-is-it-important">
+<h2>What is gridding and why is it important?<a class="headerlink" href="#what-is-gridding-and-why-is-it-important" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
+<section id="antenna-vs-cartesian-coordinates">
+<h3>Antenna vs. Cartesian Coordinates<a class="headerlink" href="#antenna-vs-cartesian-coordinates" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>Radar data, by default, is stored in a <strong>polar (or antenna) coordinate system</strong>, with the data coordinates stored as an angle (ranging from 0 to 360 degrees with 0 == North), and a radius from the radar, and an elevation which is the angle between the ground and the ground.</p>
 <p>This format can be challenging to plot, since it is scan/radar specific. Also, it can make comparing with model data, which is on a lat/lon grid, challenging since one would need to <strong>transform</strong> the model daa cartesian coordinates to polar/antenna coordiantes.</p>
 <p>Fortunately, PyART has a variety of gridding routines, which can be used to <strong>grid your data to a Cartesian grid</strong>. Once it is in this new grid, one can easily slice/dice the dataset, and compare to other data sources.</p>
-</div>
-<div class="section" id="why-is-gridding-important">
-<h3>Why is Gridding Important?<a class="headerlink" href="#why-is-gridding-important" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+</section>
+<section id="why-is-gridding-important">
+<h3>Why is Gridding Important?<a class="headerlink" href="#why-is-gridding-important" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>Gridding is essential to combining multiple data sources (ex. multiple radars), and comparing to other data sources (ex. model data). There are also decisions that are made during the gridding process that have a large impact on the regridded data - for example:</p>
 <ul class="simple">
 <li><p>What resolution should my grid be?</p></li>
@@ -544,13 +371,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <li><p>How smooth should my interpolated data be?</p></li>
 </ul>
 <p>While there is not always a right or wrong answer, it is important to understand the options available, and document which routine you used with your data! Also - experiment with different options and choose the best for your use case!</p>
-</div>
-</div>
-<div class="section" id="an-overview-of-gridding-with-py-art">
-<h2>An overview of gridding with Py-ART<a class="headerlink" href="#an-overview-of-gridding-with-py-art" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+</section>
+</section>
+<section id="an-overview-of-gridding-with-py-art">
+<h2>An overview of gridding with Py-ART<a class="headerlink" href="#an-overview-of-gridding-with-py-art" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>Let’s dig into the regridding process with PyART!</p>
-<div class="section" id="read-in-and-visualize-a-test-dataset">
-<h3>Read in and Visualize a Test Dataset<a class="headerlink" href="#read-in-and-visualize-a-test-dataset" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<section id="read-in-and-visualize-a-test-dataset">
+<h3>Read in and Visualize a Test Dataset<a class="headerlink" href="#read-in-and-visualize-a-test-dataset" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>Let’s start with the same file used in the previous notebook (<code class="docutils literal notranslate"><span class="pre">PyART</span> <span class="pre">Basics</span></code>), which is a radar file from Northern Oklahoma.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -571,13 +398,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/434a6c1fd4314edb9c3ef3d70f54af84ad7cfa88090aedd9d0badcc6b4fc342e.png" src="../../_images/434a6c1fd4314edb9c3ef3d70f54af84ad7cfa88090aedd9d0badcc6b4fc342e.png" />
+<img alt="../../_images/abee8c32f56ce817d30d4f43baef40f219d5dec51bc3db63ff678d9356e71a5d.png" src="../../_images/abee8c32f56ce817d30d4f43baef40f219d5dec51bc3db63ff678d9356e71a5d.png" />
 </div>
 </div>
 <p>As mentioned before, the dataset is currently in the <strong>antenna coordinate system</strong> measured as distance from the radar</p>
-</div>
-<div class="section" id="setup-our-gridding-routine-with-pyart-map-grid-from-radars">
-<h3>Setup our Gridding Routine with <code class="docutils literal notranslate"><span class="pre">pyart.map.grid_from_radars()</span></code><a class="headerlink" href="#setup-our-gridding-routine-with-pyart-map-grid-from-radars" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+</section>
+<section id="setup-our-gridding-routine-with-pyart-map-grid-from-radars">
+<h3>Setup our Gridding Routine with <code class="docutils literal notranslate"><span class="pre">pyart.map.grid_from_radars()</span></code><a class="headerlink" href="#setup-our-gridding-routine-with-pyart-map-grid-from-radars" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>Py-ART has the <a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.core.Grid.html#pyart.core.Grid">Grid object</a> which has characteristics similar to that of the <a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.core.Radar.html">Radar object</a>, except that the data are stored in Cartesian coordinates instead of the radar’s antenna coordinates.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -658,8 +485,8 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 </div>
 </div>
-<div class="section" id="use-our-configuration-to-grid-the-data">
-<h4>Use our configuration to grid the data!<a class="headerlink" href="#use-our-configuration-to-grid-the-data" title="Permalink to this headline"><i class="fas fa-link"></i></a></h4>
+<section id="use-our-configuration-to-grid-the-data">
+<h4>Use our configuration to grid the data!<a class="headerlink" href="#use-our-configuration-to-grid-the-data" title="Link to this heading"><i class="fas fa-link"></i></a></h4>
 <p>Now that we have the grid shape and grid limits, let’s grid up our radar!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -678,18 +505,18 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyart.core.grid.Grid at 0x7f37be965d90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyart.core.grid.Grid at 0x7f7f630adf90&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <p>We now have a <code class="docutils literal notranslate"><span class="pre">pyart.core.Grid</span></code> object!</p>
-</div>
-</div>
-<div class="section" id="plot-up-the-grid-object">
-<h3>Plot up the Grid Object<a class="headerlink" href="#plot-up-the-grid-object" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
-<div class="section" id="plot-a-horizontal-view-of-the-data">
-<h4>Plot a horizontal view of the data<a class="headerlink" href="#plot-a-horizontal-view-of-the-data" title="Permalink to this headline"><i class="fas fa-link"></i></a></h4>
+</section>
+</section>
+<section id="plot-up-the-grid-object">
+<h3>Plot up the Grid Object<a class="headerlink" href="#plot-up-the-grid-object" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<section id="plot-a-horizontal-view-of-the-data">
+<h4>Plot a horizontal view of the data<a class="headerlink" href="#plot-a-horizontal-view-of-the-data" title="Link to this heading"><i class="fas fa-link"></i></a></h4>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">GridMapDisplay</span></code> from <code class="docutils literal notranslate"><span class="pre">pyart.graph</span></code> to visualize our regridded data, starting with a horizontal view (slice along a single vertical level)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -703,12 +530,12 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d91df67813fa37e0fcac680feed1bfaa042989f333551841dc011dd9b3c42b4e.png" src="../../_images/d91df67813fa37e0fcac680feed1bfaa042989f333551841dc011dd9b3c42b4e.png" />
+<img alt="../../_images/76efc37893ad2d0c2a1ccfc28a28bd1e2ab51f237332d9f4df7d7821a883ac4c.png" src="../../_images/76efc37893ad2d0c2a1ccfc28a28bd1e2ab51f237332d9f4df7d7821a883ac4c.png" />
 </div>
 </div>
-</div>
-<div class="section" id="plot-a-latitudinal-slice">
-<h4>Plot a Latitudinal Slice<a class="headerlink" href="#plot-a-latitudinal-slice" title="Permalink to this headline"><i class="fas fa-link"></i></a></h4>
+</section>
+<section id="plot-a-latitudinal-slice">
+<h4>Plot a Latitudinal Slice<a class="headerlink" href="#plot-a-latitudinal-slice" title="Link to this heading"><i class="fas fa-link"></i></a></h4>
 <p>We can also slice through a single latitude or longitude!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -722,12 +549,12 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/969dbb0c0deb1af84841bc6ad730bae9fc948262a9424ce00d8b7540aab6dc95.png" src="../../_images/969dbb0c0deb1af84841bc6ad730bae9fc948262a9424ce00d8b7540aab6dc95.png" />
+<img alt="../../_images/4b093fa5fa97fee7132c03b5ba8ede7f83c14d6192a2f8b6d04bfdd8d4dd8bf4.png" src="../../_images/4b093fa5fa97fee7132c03b5ba8ede7f83c14d6192a2f8b6d04bfdd8d4dd8bf4.png" />
 </div>
 </div>
-</div>
-<div class="section" id="plot-with-xarray">
-<h4>Plot with Xarray<a class="headerlink" href="#plot-with-xarray" title="Permalink to this headline"><i class="fas fa-link"></i></a></h4>
+</section>
+<section id="plot-with-xarray">
+<h4>Plot with Xarray<a class="headerlink" href="#plot-with-xarray" title="Link to this heading"><i class="fas fa-link"></i></a></h4>
 <p>Another neat feature of the <code class="docutils literal notranslate"><span class="pre">Grid</span></code> object is that we can transform it to an <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code>!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1100,24 +927,24 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 184MB
 Dimensions:                               (time: 1, z: 41, y: 601, x: 601)
 Coordinates:
-  * time                                  (time) object 2019-01-25 20:00:03
-  * z                                     (z) float64 0.0 500.0 ... 2e+04
-    lat                                   (y, x) float64 -33.47 ... -30.77
-    lon                                   (y, x) float64 -66.35 ... -63.16
-  * y                                     (y) float64 -1.5e+05 ... 1.5e+05
-  * x                                     (x) float64 -1.5e+05 ... 1.5e+05
+  * time                                  (time) object 8B 2019-01-25 20:00:03
+  * z                                     (z) float64 328B 0.0 500.0 ... 2e+04
+    lat                                   (y, x) float64 3MB -33.47 ... -30.77
+    lon                                   (y, x) float64 3MB -66.35 ... -63.16
+  * y                                     (y) float64 5kB -1.5e+05 ... 1.5e+05
+  * x                                     (x) float64 5kB -1.5e+05 ... 1.5e+05
 Data variables:
-    corrected_velocity                    (time, z, y, x) float32 nan ... nan
-    attenuation_corrected_reflectivity_h  (time, z, y, x) float32 nan ... nan
-    ROI                                   (time, z, y, x) float32 5.555e+03 ....</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-f9bfc81a-81d6-4c31-b526-c1c4b1550c83' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-f9bfc81a-81d6-4c31-b526-c1c4b1550c83' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 1</li><li><span class='xr-has-index'>z</span>: 41</li><li><span class='xr-has-index'>y</span>: 601</li><li><span class='xr-has-index'>x</span>: 601</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-5ce160aa-d87c-45fe-a465-2180fa6886be' class='xr-section-summary-in' type='checkbox'  checked><label for='section-5ce160aa-d87c-45fe-a465-2180fa6886be' class='xr-section-summary' >Coordinates: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>2019-01-25 20:00:03</div><input id='attrs-664b2cc2-0a2f-4885-a217-ea77ce3775a1' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-664b2cc2-0a2f-4885-a217-ea77ce3775a1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-310ce336-04ef-4842-b89e-ea428324a5eb' class='xr-var-data-in' type='checkbox'><label for='data-310ce336-04ef-4842-b89e-ea428324a5eb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([cftime.DatetimeGregorian(2019, 1, 25, 20, 0, 3, 0, has_year_zero=False)],
-      dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>z</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 500.0 1e+03 ... 1.95e+04 2e+04</div><input id='attrs-b454bf13-7174-4b42-a20a-5c30a45ea032' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b454bf13-7174-4b42-a20a-5c30a45ea032' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-307b6ff3-afe0-487a-9b70-280ec8114ac0' class='xr-var-data-in' type='checkbox'><label for='data-307b6ff3-afe0-487a-9b70-280ec8114ac0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_z_coordinate</dd><dt><span>long_name :</span></dt><dd>Z distance on the projection plane from the origin</dd><dt><span>axis :</span></dt><dd>Z</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>positive :</span></dt><dd>up</dd></dl></div><div class='xr-var-data'><pre>array([    0.,   500.,  1000.,  1500.,  2000.,  2500.,  3000.,  3500.,  4000.,
+    corrected_velocity                    (time, z, y, x) float32 59MB nan .....
+    attenuation_corrected_reflectivity_h  (time, z, y, x) float32 59MB nan .....
+    ROI                                   (time, z, y, x) float32 59MB 5.555e...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-cd947a18-e4e0-474e-9089-d313e0d4bfb6' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-cd947a18-e4e0-474e-9089-d313e0d4bfb6' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 1</li><li><span class='xr-has-index'>z</span>: 41</li><li><span class='xr-has-index'>y</span>: 601</li><li><span class='xr-has-index'>x</span>: 601</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-57e42f17-c23d-4dad-94d5-59714f28646d' class='xr-section-summary-in' type='checkbox'  checked><label for='section-57e42f17-c23d-4dad-94d5-59714f28646d' class='xr-section-summary' >Coordinates: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>2019-01-25 20:00:03</div><input id='attrs-8806db68-9611-4c8c-8050-b69336b17205' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-8806db68-9611-4c8c-8050-b69336b17205' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-21bcc0ce-1683-4fa6-af9f-12541313cb30' class='xr-var-data-in' type='checkbox'><label for='data-21bcc0ce-1683-4fa6-af9f-12541313cb30' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([cftime.DatetimeGregorian(2019, 1, 25, 20, 0, 3, 0, has_year_zero=False)],
+      dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>z</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 500.0 1e+03 ... 1.95e+04 2e+04</div><input id='attrs-1df82759-cb42-497d-9111-b976df0ef612' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1df82759-cb42-497d-9111-b976df0ef612' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e4d45fd6-f206-42fe-b0f7-98e49c68b981' class='xr-var-data-in' type='checkbox'><label for='data-e4d45fd6-f206-42fe-b0f7-98e49c68b981' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_z_coordinate</dd><dt><span>long_name :</span></dt><dd>Z distance on the projection plane from the origin</dd><dt><span>axis :</span></dt><dd>Z</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>positive :</span></dt><dd>up</dd></dl></div><div class='xr-var-data'><pre>array([    0.,   500.,  1000.,  1500.,  2000.,  2500.,  3000.,  3500.,  4000.,
         4500.,  5000.,  5500.,  6000.,  6500.,  7000.,  7500.,  8000.,  8500.,
         9000.,  9500., 10000., 10500., 11000., 11500., 12000., 12500., 13000.,
        13500., 14000., 14500., 15000., 15500., 16000., 16500., 17000., 17500.,
-       18000., 18500., 19000., 19500., 20000.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-33.47 -33.47 ... -30.77 -30.77</div><input id='attrs-85951a4a-9c59-471a-a3dd-66b170cd17d7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-85951a4a-9c59-471a-a3dd-66b170cd17d7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3f5062ff-fb5f-4cd1-884f-dde9b18798b6' class='xr-var-data-in' type='checkbox'><label for='data-3f5062ff-fb5f-4cd1-884f-dde9b18798b6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>latitude of grid cell center</dd><dt><span>units :</span></dt><dd>degree_N</dd><dt><span>standard_name :</span></dt><dd>Latitude</dd></dl></div><div class='xr-var-data'><pre>array([[-33.46514872, -33.46521693, -33.46528491, ..., -33.46528491,
+       18000., 18500., 19000., 19500., 20000.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-33.47 -33.47 ... -30.77 -30.77</div><input id='attrs-9758b8c5-ffdc-4e9d-9705-9f60a97cd209' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9758b8c5-ffdc-4e9d-9705-9f60a97cd209' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5a726d54-4991-43d9-9ab7-011f9d2a1391' class='xr-var-data-in' type='checkbox'><label for='data-5a726d54-4991-43d9-9ab7-011f9d2a1391' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>latitude of grid cell center</dd><dt><span>units :</span></dt><dd>degree_N</dd><dt><span>standard_name :</span></dt><dd>Latitude</dd></dl></div><div class='xr-var-data'><pre>array([[-33.46514872, -33.46521693, -33.46528491, ..., -33.46528491,
         -33.46521693, -33.46514872],
        [-33.46065306, -33.46072126, -33.46078923, ..., -33.46078923,
         -33.46072126, -33.46065306],
@@ -1129,7 +956,7 @@ Data variables:
        [-30.77222259, -30.77228718, -30.77235156, ..., -30.77235156,
         -30.77228718, -30.77222259],
        [-30.76772685, -30.76779144, -30.7678558 , ..., -30.7678558 ,
-        -30.76779144, -30.76772685]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-66.35 -66.34 ... -63.16 -63.16</div><input id='attrs-d32377c5-62c9-4729-b769-b39e9153d8ff' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d32377c5-62c9-4729-b769-b39e9153d8ff' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-06b255dd-9ca5-4ad1-b769-01542ac2e33a' class='xr-var-data-in' type='checkbox'><label for='data-06b255dd-9ca5-4ad1-b769-01542ac2e33a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>longitude of grid cell center</dd><dt><span>units :</span></dt><dd>degree_E</dd><dt><span>standard_name :</span></dt><dd>Longitude</dd></dl></div><div class='xr-var-data'><pre>array([[-66.3453431 , -66.33995403, -66.33456495, ..., -63.1221768 ,
+        -30.76779144, -30.76772685]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-66.35 -66.34 ... -63.16 -63.16</div><input id='attrs-830b12a2-f67b-4802-9a59-8e7f61bbbdc8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-830b12a2-f67b-4802-9a59-8e7f61bbbdc8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2dbab51d-459f-4947-96d6-af48ae3508e2' class='xr-var-data-in' type='checkbox'><label for='data-2dbab51d-459f-4947-96d6-af48ae3508e2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>longitude of grid cell center</dd><dt><span>units :</span></dt><dd>degree_E</dd><dt><span>standard_name :</span></dt><dd>Longitude</dd></dl></div><div class='xr-var-data'><pre>array([[-66.3453431 , -66.33995403, -66.33456495, ..., -63.1221768 ,
         -63.11678772, -63.11139865],
        [-66.34526022, -66.33987142, -66.33448262, ..., -63.12225914,
         -63.11687033, -63.11148154],
@@ -1141,7 +968,7 @@ Data variables:
        [-66.29830892, -66.29307651, -66.28784408, ..., -63.16889767,
         -63.16366525, -63.15843283],
        [-66.2982346 , -66.29300243, -66.28777025, ..., -63.1689715 ,
-        -63.16373933, -63.15850716]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.5e+05 -1.495e+05 ... 1.5e+05</div><input id='attrs-d58bf781-8d83-4640-9cc0-4cfad677bbf0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d58bf781-8d83-4640-9cc0-4cfad677bbf0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f57e671c-8a49-4e7e-b431-42f952c3c185' class='xr-var-data-in' type='checkbox'><label for='data-f57e671c-8a49-4e7e-b431-42f952c3c185' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>long_name :</span></dt><dd>Y distance on the projection plane from the origin</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-150000., -149500., -149000., ...,  149000.,  149500.,  150000.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.5e+05 -1.495e+05 ... 1.5e+05</div><input id='attrs-19b329c6-cfc1-42b8-ae8c-f3c2f2ec1167' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-19b329c6-cfc1-42b8-ae8c-f3c2f2ec1167' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5312c6ab-12b8-4e2a-983c-907f9d477b92' class='xr-var-data-in' type='checkbox'><label for='data-5312c6ab-12b8-4e2a-983c-907f9d477b92' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>long_name :</span></dt><dd>X distance on the projection plane from the origin</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-150000., -149500., -149000., ...,  149000.,  149500.,  150000.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-48243c72-3e5d-4568-bf4d-563eedaf9cdf' class='xr-section-summary-in' type='checkbox'  checked><label for='section-48243c72-3e5d-4568-bf4d-563eedaf9cdf' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>corrected_velocity</span></div><div class='xr-var-dims'>(time, z, y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>nan nan nan nan ... nan nan nan nan</div><input id='attrs-90464387-850b-4340-8071-84ba17b4d0fa' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-90464387-850b-4340-8071-84ba17b4d0fa' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-158d7264-bd22-445b-9845-8235ab8b553f' class='xr-var-data-in' type='checkbox'><label for='data-158d7264-bd22-445b-9845-8235ab8b553f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>_FillValue :</span></dt><dd>-32767.0</dd><dt><span>long_name :</span></dt><dd>Corrected mean doppler velocity</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>standard_name :</span></dt><dd>corrected_radial_velocity_of_scatterers_away_from_instrument</dd><dt><span>coordinates :</span></dt><dd>elevation azimuth range</dd><dt><span>valid_min :</span></dt><dd>-115.444</dd><dt><span>valid_max :</span></dt><dd>115.444</dd></dl></div><div class='xr-var-data'><pre>array([[[[nan, nan, nan, ..., nan, nan, nan],
+        -63.16373933, -63.15850716]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.5e+05 -1.495e+05 ... 1.5e+05</div><input id='attrs-f1f5c961-616f-490d-9599-34d7dc122a58' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f1f5c961-616f-490d-9599-34d7dc122a58' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1d4b52ba-d0be-4184-88c3-46b51a4a8cff' class='xr-var-data-in' type='checkbox'><label for='data-1d4b52ba-d0be-4184-88c3-46b51a4a8cff' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>long_name :</span></dt><dd>Y distance on the projection plane from the origin</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-150000., -149500., -149000., ...,  149000.,  149500.,  150000.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.5e+05 -1.495e+05 ... 1.5e+05</div><input id='attrs-730dce3e-2061-42f6-af37-d758a247ef1f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-730dce3e-2061-42f6-af37-d758a247ef1f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-59171e8f-2362-4010-820d-27498504d789' class='xr-var-data-in' type='checkbox'><label for='data-59171e8f-2362-4010-820d-27498504d789' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>long_name :</span></dt><dd>X distance on the projection plane from the origin</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-150000., -149500., -149000., ...,  149000.,  149500.,  150000.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-19b1d83b-0d21-4b45-9d1f-592756021160' class='xr-section-summary-in' type='checkbox'  checked><label for='section-19b1d83b-0d21-4b45-9d1f-592756021160' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>corrected_velocity</span></div><div class='xr-var-dims'>(time, z, y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>nan nan nan nan ... nan nan nan nan</div><input id='attrs-c16ea655-954f-4cdc-b25a-dc3fa5880a14' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c16ea655-954f-4cdc-b25a-dc3fa5880a14' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cbf70680-e5b0-46d2-af42-2b32cb70d903' class='xr-var-data-in' type='checkbox'><label for='data-cbf70680-e5b0-46d2-af42-2b32cb70d903' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>_FillValue :</span></dt><dd>-32767.0</dd><dt><span>long_name :</span></dt><dd>Corrected mean doppler velocity</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>standard_name :</span></dt><dd>corrected_radial_velocity_of_scatterers_away_from_instrument</dd><dt><span>coordinates :</span></dt><dd>elevation azimuth range</dd><dt><span>valid_min :</span></dt><dd>-115.444</dd><dt><span>valid_max :</span></dt><dd>115.444</dd></dl></div><div class='xr-var-data'><pre>array([[[[nan, nan, nan, ..., nan, nan, nan],
          [nan, nan, nan, ..., nan, nan, nan],
          [nan, nan, nan, ..., nan, nan, nan],
          ...,
@@ -1181,7 +1008,7 @@ Data variables:
          ...,
          [nan, nan, nan, ..., nan, nan, nan],
          [nan, nan, nan, ..., nan, nan, nan],
-         [nan, nan, nan, ..., nan, nan, nan]]]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>attenuation_corrected_reflectivity_h</span></div><div class='xr-var-dims'>(time, z, y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>nan nan nan nan ... nan nan nan nan</div><input id='attrs-45f0e03b-d853-469b-94d7-5538c7ce485d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-45f0e03b-d853-469b-94d7-5538c7ce485d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e7c9e749-9971-4555-9e5e-7451b3392aca' class='xr-var-data-in' type='checkbox'><label for='data-e7c9e749-9971-4555-9e5e-7451b3392aca' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>_FillValue :</span></dt><dd>-32767.0</dd><dt><span>long_name :</span></dt><dd>Rainfall attenuation-corrected reflectivity, horizontal channel</dd><dt><span>units :</span></dt><dd>dBZ</dd><dt><span>coordinates :</span></dt><dd>elevation azimuth range</dd><dt><span>standard_name :</span></dt><dd>equivalent_reflectivity_factor</dd><dt><span>applied_bias_correction :</span></dt><dd>1.8</dd></dl></div><div class='xr-var-data'><pre>array([[[[nan, nan, nan, ..., nan, nan, nan],
+         [nan, nan, nan, ..., nan, nan, nan]]]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>attenuation_corrected_reflectivity_h</span></div><div class='xr-var-dims'>(time, z, y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>nan nan nan nan ... nan nan nan nan</div><input id='attrs-84720c58-6d1a-4a0a-8296-e659e41c9099' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-84720c58-6d1a-4a0a-8296-e659e41c9099' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b1366de2-cedc-4baf-aaa2-96d8643c4e42' class='xr-var-data-in' type='checkbox'><label for='data-b1366de2-cedc-4baf-aaa2-96d8643c4e42' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>_FillValue :</span></dt><dd>-32767.0</dd><dt><span>long_name :</span></dt><dd>Rainfall attenuation-corrected reflectivity, horizontal channel</dd><dt><span>units :</span></dt><dd>dBZ</dd><dt><span>coordinates :</span></dt><dd>elevation azimuth range</dd><dt><span>standard_name :</span></dt><dd>equivalent_reflectivity_factor</dd><dt><span>applied_bias_correction :</span></dt><dd>1.8</dd></dl></div><div class='xr-var-data'><pre>array([[[[nan, nan, nan, ..., nan, nan, nan],
          [nan, nan, nan, ..., nan, nan, nan],
          [nan, nan, nan, ..., nan, nan, nan],
          ...,
@@ -1221,7 +1048,7 @@ Data variables:
          ...,
          [nan, nan, nan, ..., nan, nan, nan],
          [nan, nan, nan, ..., nan, nan, nan],
-         [nan, nan, nan, ..., nan, nan, nan]]]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ROI</span></div><div class='xr-var-dims'>(time, z, y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>5.555e+03 5.546e+03 ... 6.555e+03</div><input id='attrs-f88cebf4-34d8-475f-ad81-dbc51a578de2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f88cebf4-34d8-475f-ad81-dbc51a578de2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b2728ea5-2982-4e99-81fc-cd0eafb039a7' class='xr-var-data-in' type='checkbox'><label for='data-b2728ea5-2982-4e99-81fc-cd0eafb039a7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>radius_of_influence</dd><dt><span>long_name :</span></dt><dd>Radius of influence for mapping</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>least_significant_digit :</span></dt><dd>1</dd><dt><span>_FillValue :</span></dt><dd>-9999.0</dd></dl></div><div class='xr-var-data'><pre>array([[[[5554.8657, 5545.615 , 5536.3804, ..., 5536.3804, 5545.615 ,
+         [nan, nan, nan, ..., nan, nan, nan]]]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ROI</span></div><div class='xr-var-dims'>(time, z, y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>5.555e+03 5.546e+03 ... 6.555e+03</div><input id='attrs-7fb6e6e4-9cb2-44e7-a195-ae7dca6fe185' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7fb6e6e4-9cb2-44e7-a195-ae7dca6fe185' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8f44ceac-a720-4353-9503-82420d4af117' class='xr-var-data-in' type='checkbox'><label for='data-8f44ceac-a720-4353-9503-82420d4af117' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>radius_of_influence</dd><dt><span>long_name :</span></dt><dd>Radius of influence for mapping</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>least_significant_digit :</span></dt><dd>1</dd><dt><span>_FillValue :</span></dt><dd>-9999.0</dd></dl></div><div class='xr-var-data'><pre>array([[[[5554.8657, 5545.615 , 5536.3804, ..., 5536.3804, 5545.615 ,
           5554.8657],
          [5545.615 , 5536.3496, 5527.099 , ..., 5527.099 , 5536.3496,
           5545.615 ],
@@ -1261,24 +1088,24 @@ Data variables:
          [6545.63  , 6536.364 , 6527.1133, ..., 6527.1133, 6536.364 ,
           6545.63  ],
          [6554.88  , 6545.63  , 6536.395 , ..., 6536.395 , 6545.63  ,
-          6554.88  ]]]], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ccb4d439-8f99-44e2-887b-158df8d3bc1f' class='xr-section-summary-in' type='checkbox'  ><label for='section-ccb4d439-8f99-44e2-887b-158df8d3bc1f' class='xr-section-summary' >Indexes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-b14d77e9-b6d0-4a95-9eb2-3a85c230b3b1' class='xr-index-data-in' type='checkbox'/><label for='index-b14d77e9-b6d0-4a95-9eb2-3a85c230b3b1' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(CFTimeIndex([2019-01-25 20:00:03],
-            dtype=&#x27;object&#x27;, length=1, calendar=&#x27;standard&#x27;, freq=None))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>z</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-91dc5652-e284-41ae-a098-bca8fc3c1677' class='xr-index-data-in' type='checkbox'/><label for='index-91dc5652-e284-41ae-a098-bca8fc3c1677' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([    0.0,   500.0,  1000.0,  1500.0,  2000.0,  2500.0,  3000.0,  3500.0,
+          6554.88  ]]]], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a9fe9105-cb53-4fb0-96d9-ee53bf6d008f' class='xr-section-summary-in' type='checkbox'  ><label for='section-a9fe9105-cb53-4fb0-96d9-ee53bf6d008f' class='xr-section-summary' >Indexes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-07a8cf95-0f79-4be9-9211-4e59e2df9afc' class='xr-index-data-in' type='checkbox'/><label for='index-07a8cf95-0f79-4be9-9211-4e59e2df9afc' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(CFTimeIndex([2019-01-25 20:00:03],
+            dtype=&#x27;object&#x27;, length=1, calendar=&#x27;standard&#x27;, freq=None))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>z</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-8048ea4d-08ea-4985-a093-d5ca79b010ed' class='xr-index-data-in' type='checkbox'/><label for='index-8048ea4d-08ea-4985-a093-d5ca79b010ed' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([    0.0,   500.0,  1000.0,  1500.0,  2000.0,  2500.0,  3000.0,  3500.0,
         4000.0,  4500.0,  5000.0,  5500.0,  6000.0,  6500.0,  7000.0,  7500.0,
         8000.0,  8500.0,  9000.0,  9500.0, 10000.0, 10500.0, 11000.0, 11500.0,
        12000.0, 12500.0, 13000.0, 13500.0, 14000.0, 14500.0, 15000.0, 15500.0,
        16000.0, 16500.0, 17000.0, 17500.0, 18000.0, 18500.0, 19000.0, 19500.0,
        20000.0],
-      dtype=&#x27;float64&#x27;, name=&#x27;z&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>y</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-f7b6938c-fc3c-4d9e-952a-28e01683cf95' class='xr-index-data-in' type='checkbox'/><label for='index-f7b6938c-fc3c-4d9e-952a-28e01683cf95' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-150000.0, -149500.0, -149000.0, -148500.0, -148000.0, -147500.0,
+      dtype=&#x27;float64&#x27;, name=&#x27;z&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>y</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-0770da54-af6f-4de8-8842-7316a8428492' class='xr-index-data-in' type='checkbox'/><label for='index-0770da54-af6f-4de8-8842-7316a8428492' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-150000.0, -149500.0, -149000.0, -148500.0, -148000.0, -147500.0,
        -147000.0, -146500.0, -146000.0, -145500.0,
        ...
         145500.0,  146000.0,  146500.0,  147000.0,  147500.0,  148000.0,
         148500.0,  149000.0,  149500.0,  150000.0],
-      dtype=&#x27;float64&#x27;, name=&#x27;y&#x27;, length=601))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>x</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-ea441c3c-0906-4d51-a266-bf7cf61074ce' class='xr-index-data-in' type='checkbox'/><label for='index-ea441c3c-0906-4d51-a266-bf7cf61074ce' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-150000.0, -149500.0, -149000.0, -148500.0, -148000.0, -147500.0,
+      dtype=&#x27;float64&#x27;, name=&#x27;y&#x27;, length=601))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>x</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-11ea6c85-af3d-4218-a8a2-9efe55b54205' class='xr-index-data-in' type='checkbox'/><label for='index-11ea6c85-af3d-4218-a8a2-9efe55b54205' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-150000.0, -149500.0, -149000.0, -148500.0, -148000.0, -147500.0,
        -147000.0, -146500.0, -146000.0, -145500.0,
        ...
         145500.0,  146000.0,  146500.0,  147000.0,  147500.0,  148000.0,
         148500.0,  149000.0,  149500.0,  150000.0],
-      dtype=&#x27;float64&#x27;, name=&#x27;x&#x27;, length=601))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-095ad24a-1577-49f0-a76c-67390f828ae3' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-095ad24a-1577-49f0-a76c-67390f828ae3' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;float64&#x27;, name=&#x27;x&#x27;, length=601))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-342a02be-19c9-45f9-a71b-8bec42d397d4' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-342a02be-19c9-45f9-a71b-8bec42d397d4' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Now, our plotting routine is a <strong>one-liner</strong>, starting with the horizontal slice:</p>
 <div class="cell docutils container">
@@ -1290,7 +1117,7 @@ Data variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f43a05ee5fb06474db8423fcbd9e7d7185fc6606e1e3f4212d3bccc83eaa4102.png" src="../../_images/f43a05ee5fb06474db8423fcbd9e7d7185fc6606e1e3f4212d3bccc83eaa4102.png" />
+<img alt="../../_images/fbf4673224160be8b94fd82b9943934502eee269cebc56743b1573caaea4aea3.png" src="../../_images/fbf4673224160be8b94fd82b9943934502eee269cebc56743b1573caaea4aea3.png" />
 </div>
 </div>
 <p>And a vertical slice at a given y dimension (latitude)</p>
@@ -1308,13 +1135,13 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 50000.0)
 </pre></div>
 </div>
-<img alt="../../_images/7653e47b6163cd380404a3096de0c0eb17357ee96ccfda58e1d3dda3ff045e4f.png" src="../../_images/7653e47b6163cd380404a3096de0c0eb17357ee96ccfda58e1d3dda3ff045e4f.png" />
+<img alt="../../_images/5e8bb1622c678ef01bdc6e51508830e7421a744a1ef0630e637a4a6b2194ffe6.png" src="../../_images/5e8bb1622c678ef01bdc6e51508830e7421a744a1ef0630e637a4a6b2194ffe6.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="try-a-different-gridding-technique">
-<h3>Try a Different Gridding Technique<a class="headerlink" href="#try-a-different-gridding-technique" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+</section>
+</section>
+<section id="try-a-different-gridding-technique">
+<h3>Try a Different Gridding Technique<a class="headerlink" href="#try-a-different-gridding-technique" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nearest_grid</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">grid_from_radars</span><span class="p">(</span><span class="n">radar</span><span class="p">,</span>
@@ -1343,7 +1170,7 @@ Data variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/969dbb0c0deb1af84841bc6ad730bae9fc948262a9424ce00d8b7540aab6dc95.png" src="../../_images/969dbb0c0deb1af84841bc6ad730bae9fc948262a9424ce00d8b7540aab6dc95.png" />
+<img alt="../../_images/4b093fa5fa97fee7132c03b5ba8ede7f83c14d6192a2f8b6d04bfdd8d4dd8bf4.png" src="../../_images/4b093fa5fa97fee7132c03b5ba8ede7f83c14d6192a2f8b6d04bfdd8d4dd8bf4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1359,37 +1186,37 @@ Data variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8c0b6d2d3c256dc5e15b6ff6834508a5aefd9ae208ab143446c4ca56ab128bd3.png" src="../../_images/8c0b6d2d3c256dc5e15b6ff6834508a5aefd9ae208ab143446c4ca56ab128bd3.png" />
+<img alt="../../_images/a384d0b4e2b680af383d2af9d0a3b2b8e75535eb539f79023240ba6cca4dac55.png" src="../../_images/a384d0b4e2b680af383d2af9d0a3b2b8e75535eb539f79023240ba6cca4dac55.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>Within this notebook, we covered the basics of gridding radar data using <code class="docutils literal notranslate"><span class="pre">pyart</span></code>, including:</p>
 <ul class="simple">
 <li><p>What we mean by gridding and why is it matters</p></li>
 <li><p>Configuring your gridding routine</p></li>
 <li><p>Visualize gridded radar data</p></li>
 </ul>
-<div class="section" id="whats-next">
-<h3>What’s Next<a class="headerlink" href="#whats-next" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<section id="whats-next">
+<h3>What’s Next<a class="headerlink" href="#whats-next" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>In the next few notebooks, we walk through applying data cleaning methods, and advanced visualization methods!</p>
-</div>
-</div>
-<div class="section" id="resources-and-references">
-<h2>Resources and References<a class="headerlink" href="#resources-and-references" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+</section>
+</section>
+<section id="resources-and-references">
+<h2>Resources and References<a class="headerlink" href="#resources-and-references" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>Py-ART essentials links:</p>
 <ul class="simple">
-<li><p><span class="xref myst">Landing page</span></p></li>
+<li><p><a class="reference internal" href="#arm-doe.github.io/pyart/"><span class="xref myst">Landing page</span></a></p></li>
 <li><p><a class="reference external" href="https://arm-doe.github.io/pyart/examples/index.html">Examples</a></p></li>
-<li><p><span class="xref myst">Source Code</span></p></li>
-<li><p><span class="xref myst">Mailing list</span></p></li>
-<li><p><span class="xref myst">Issue Tracker</span></p></li>
+<li><p><a class="reference internal" href="#github.com/ARM-DOE/pyart"><span class="xref myst">Source Code</span></a></p></li>
+<li><p><a class="reference internal" href="#groups.google.com/group/pyart-users/"><span class="xref myst">Mailing list</span></a></p></li>
+<li><p><a class="reference internal" href="#github.com/ARM-DOE/pyart/issues"><span class="xref myst">Issue Tracker</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1411,80 +1238,343 @@ Data variables:
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="pyart-basics.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Py-ART Basics</p>
-        </div>
+                  </article>
+
+                
+                
+
+                
+                
+                  <footer class="prev-next-footer">
+                    
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pyart-basics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Py-ART Basics</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../xarray/Untitled.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../xarray/Untitled.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">&lt;no title&gt;</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                  </footer>
+                
+              </div>
+
+              
+              
+                
+                  <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-gridding-and-why-is-it-important">What is gridding and why is it important?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#antenna-vs-cartesian-coordinates">Antenna vs. Cartesian Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-gridding-important">Why is Gridding Important?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-overview-of-gridding-with-py-art">An overview of gridding with Py-ART</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-and-visualize-a-test-dataset">Read in and Visualize a Test Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-our-gridding-routine-with-pyart-map-grid-from-radars">Setup our Gridding Routine with <code class="docutils literal notranslate"><span class="pre">pyart.map.grid_from_radars()</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-our-configuration-to-grid-the-data">Use our configuration to grid the data!</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-up-the-grid-object">Plot up the Grid Object</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-a-horizontal-view-of-the-data">Plot a horizontal view of the data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-a-latitudinal-slice">Plot a Latitudinal Slice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-with-xarray">Plot with Xarray</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-a-different-gridding-technique">Try a Different Gridding Technique</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-next">What’s Next</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-references">Resources and References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+                
+              
+
+
+                
+                <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://binder.projectpythia.org/v2/gh/ProjectPythia/cookbook-template/main?urlpath=lab/tree/notebooks/pyart/pyart-gridding.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ProjectPythia/cookbook-template" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ProjectPythia/cookbook-template/edit/main/notebooks/pyart/pyart-gridding.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ProjectPythia/cookbook-template/issues/new?title=Issue%20on%20page%20%2Fnotebooks/pyart/pyart-gridding.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/pyart/pyart-gridding.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
             </div>
-          </div>
+
+            <footer class="bd-footer-content">
+              
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the <a href="https://projectpythia.org/">Project Pythia</a> Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on 5 April 2024.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+            </footer>
+
         </main>
+    </div>
+  </div>
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-      </div>
-    </div>
-  
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-
-<footer class="footer">
-  <div class="container-fluid m-0 p-0">
-  
-    <div class="footer-item">
-    
-  <div class="container-fluid footer-logos">
-    <div class="container-xl">
-      <div class="row d-flex flex-wrap align-items-center">
-        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
-          <img alt="NCAR" src="../../_images/NCAR-contemp-logo-blue.svg" style="width: 100%">
-        </div>
-        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
-          <img alt="Unidata" src="../../_images/Unidata_logo_horizontal_1200x300.svg" style="width: 100%">
-        </div>
-        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
-          <img alt="UAlbany" src="../../_images/UAlbany-A2-logo-purple-gold.svg" style="width: 100%">
-        </div>
-      </div>
-    </div>
-  </div>
-    </div>
-  
-    <div class="footer-item">
-    
-    </div>
-  
-    <div class="footer-item">
-      <div class="container-fluid footer-info">
-    <div class="container-xl">
-      <div class="d-flex justify-content-center">
-        <p class="py-1 m-0">
-            &copy;&nbsp;2023.
-        
-          By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
-        
-          Last updated on 29 November 2023.
-        </p>
-      </div>
-    </div>
-  </div>
-    </div>
-  
-    <div class="footer-item">
-    
-    </div>
-  
-  </div>
-</footer>
+  <footer class="bd-footer">
+     
+  </footer>
   </body>
 </html>
