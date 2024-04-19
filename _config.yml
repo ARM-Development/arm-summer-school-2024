@@ -3,7 +3,7 @@
 
 title: ARM Open Science Summer School 2024
 author: the <a href="https://www.arm.gov/">ARM Open Science</a> Community
-logo: notebooks/images/logos/arm_logo.png
+logo: tutorials/images/logos/arm_logo.png
 copyright: "2024"
 
 execute:
@@ -38,7 +38,7 @@ sphinx:
   config:
     linkcheck_ignore: ["https://doi.org/*", "https://zenodo.org/badge/*"] # don't run link checker on DOI links since they are immutable
     nb_execution_raise_on_error: true # raise exception in build if there are notebook errors (this flag is ignored if building on binder)
-    html_favicon: notebooks/images/logos/arm_logo.png
+    html_favicon: tutorials/images/logos/arm_logo.png
     html_last_updated_fmt: "%-d %B %Y"
     html_permalinks_icon: '<i class="fas fa-link"></i>'
     html_theme_options:
