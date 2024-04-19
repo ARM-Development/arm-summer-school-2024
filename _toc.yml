@@ -1,12 +1,21 @@
 format: jb-book
 root: README
 parts:
-  - caption: Preamble
-    chapters:
-      - file: notebooks/how-to-cite
-  - caption: Radar Data with Py-ART
-    chapters:
-      - glob: notebooks/pyart/*
-  - caption: Xarray
-    chapters:
-      - glob: notebooks/xarray/*
+- caption: Preparation
+  chapters:
+    - file: preliminary/checklist_index
+      sections:
+      - file: preliminary/checklist/github
+      - file: preliminary/checklist/jupyterhub
+      - file: preliminary/checklist/git
+      - file: preliminary/checklist/armdata
+    - file: preliminary/skills_refresher_index
+      sections:
+        - file: preliminary/skills-refresher/swc
+- caption: Tutorials
+  chapters:
+    - file: tutorials/index
+      sections:
+        - file: tutorials/pyart/pyart-basics
+        - file: tutorials/pyart/pyart-gridding
+        - file: tutorials/xarray/xarray-intro

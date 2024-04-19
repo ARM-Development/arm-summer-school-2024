@@ -1,4 +1,4 @@
-name: arm-ams-short-course-2024-dev
+name: arm-summer-school-2024-dev
 channels:
   - conda-forge
   - pyviz
@@ -17,4 +17,4 @@ dependencies:
   - jupyter_server
   - pip
   - pip:
-      - sphinx-pythia-theme
+      - sphinx-book-theme
