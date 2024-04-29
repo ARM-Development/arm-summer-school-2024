@@ -1,6 +1,6 @@
 # ARM Summer School 2024
 
-## ARM Summer School Focused on Open Science in the Department of Energy's Atmospheric Radiation Measurement (ARM) User Facility: Connecting State-of-the-Art Models with Diverse Field Campaign Observations
+***ARM Summer School 2024: Open Science in the Department of Energy's Atmospheric Radiation Measurement (ARM) User Facility: Connecting State-of-the-Art Models with Diverse Field Campaign Observations***
 
 
 [![badge](https://img.shields.io/static/v1.svg?logo=Jupyter&label=ARM+JupyterHub&message=ACE+Environment&color=blue)](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/arm-ams-short-course-2024&urlpath=lab/tree/arm-ams-short-course-2024/notebooks&branch=main)
