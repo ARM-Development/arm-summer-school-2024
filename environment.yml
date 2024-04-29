@@ -18,3 +18,4 @@ dependencies:
   - pip
   - pip:
       - sphinx-book-theme
+      - https://github.com/EUREC4A-UK/lagtraj
