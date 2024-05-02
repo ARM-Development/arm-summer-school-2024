@@ -21,4 +21,5 @@ parts:
       sections:
         - file: tutorials/pyart/pyart-basics
         - file: tutorials/pyart/pyart-gridding
+        - file: tutorials/act/act_tutorial_comble
         - file: tutorials/xarray/xarray-intro
