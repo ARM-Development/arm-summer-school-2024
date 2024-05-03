@@ -14,7 +14,7 @@
 | 09:30 AM - 10:00 AM  | Coffee Break                           |                                    |
 | 10:00 AM - 11:00 AM  | Intro to ARM Data Workbench            | Sujata Goswami + Mike Giansiracusa |
 | 11:00 AM - 12:00 PM  | Intro to ARM Open Source Software      | Scott Collis + Joe O'Brien         |
-| 12:00 PM - 01:00 PM  | Working Lunch: Reviewing Python Basics | Max Grover                         |
+| 12:00 PM - 01:00 PM  | Working Lunch: Elevator Pitch Intros   | Max Grover                         |
 | 01:00 PM - 01:45 PM  | Intro to COMBLE-MIP                    | Tim Juliano                        |
 | 01:45 PM - 02:30 PM  | Intro to LASSO                         | William Gustafson                  |
 | 02:30 PM - 03:00 PM  | Coffee Break                           |                                    |
