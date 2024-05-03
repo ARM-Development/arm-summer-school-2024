@@ -65,7 +65,7 @@
     <link rel="prev" title="Py-ART Gridding" href="../pyart/pyart-gridding.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="2 May 2024"/>
+    <meta name="docbuild:last-update" content="3 May 2024"/>
   </head>
   
   
@@ -539,7 +539,7 @@ document.write(`
 <h1>ACT Basics<a class="headerlink" href="#act-basics" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
-<p>The ARM TRACER campaign collected a lot of very interesting data in Norway from December 1 2019 - May 31 2020.  One event that stands out is a dust event that occurred from July 16 to July 19, 2022.  This notebook will give an introduction to basic features in ACT, using some relevant datastreams from this event</p>
+<p>The ARM COMBLE campaign collected a lot of very interesting data in Norway from December 1 2019 - May 31 2020.  Here we look at a case study from March 9 to March 16, 2020.  This notebook will give an introduction to basic features in ACT, using some relevant datastreams from this event</p>
 <ol class="arabic simple">
 <li><p>Intro to ACT</p></li>
 <li><p>Downloading and Reading in Data</p></li>
@@ -5843,24 +5843,6 @@ https://doi.org/10.5439/1595321
 </div>
 </div>
 <hr class="docutils" />
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">armfiles</span><span class="o">.</span><span class="n">create_ds_from_arm_dod</span><span class="p">(</span><span class="s1">&#39;ld.b1&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="mi">1440</span><span class="p">},</span> <span class="n">scalar_fill_dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
-
-<span class="c1"># Create some random data and set it to the variable in the obect like normal</span>
-<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;precip_rate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1440</span><span class="p">)</span>
-<span class="n">ds</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;precip_rate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 </section>
@@ -6010,7 +5992,7 @@ By the <a href="https://www.arm.gov/">ARM Open Science</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 2 May 2024.
+  Last updated on 3 May 2024.
   <br/>
 </p>
   </div>
