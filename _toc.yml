@@ -19,3 +19,5 @@ parts:
         - file: tutorials/pyart/pyart-basics
         - file: tutorials/pyart/pyart-gridding
         - file: tutorials/xarray/xarray-intro
+        - file: tutorials/lasso/lasso-cacti
+        - file: tutorials/lasso/lasso-cacti_part2
