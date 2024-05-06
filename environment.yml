@@ -21,3 +21,6 @@ dependencies:
   - pip:
       - sphinx-book-theme
       - git+https://github.com/EUREC4A-UK/lagtraj
+      - scikit-learn
+      - numpy
+      - plotly
