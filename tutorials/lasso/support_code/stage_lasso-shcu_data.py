@@ -2,6 +2,8 @@
 This code stages LASSO-ShCu data files on Cumulus's wolf2 that are needed for the LASSO tutorial portion of the 2024 ARM Summer School.
 It is assumed the LASSO-ShCu tar files are pre-copied into a single directory to draw from to build out an organized tree structure.
 
+NOTE: Make sure to set the correct folder locations at the top of main().
+
 Author: William.Gustafson@pnnl.gov
 Date: 6-May-2024
 """
@@ -113,7 +115,7 @@ def stage_highfreqobs(tarfilename, path_stage):
 #-----------------------------------------------------------------------
 def main():
     path_tars = "/gpfs/wolf2/arm/atm124/world-shared/arm-summer-school-2024/lasso_tutorial/ShCu/tars"
-    path_stage = "/gpfs/wolf2/arm/atm124/world-shared/arm-summer-school-2024/lasso_tutorial/ShCu/test2"
+    path_stage = "/gpfs/wolf2/arm/atm124/world-shared/arm-summer-school-2024/lasso_tutorial/ShCu/untar"
 
     # Get the list of tar files to process and loop over them...
     tar_list = glob(f"{path_tars}/*.tar")
