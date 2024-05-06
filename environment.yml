@@ -21,7 +21,6 @@ dependencies:
   - numpy
   - netCDF4
   - pathlib
-  - glob
   - pip
   - pip:
       - sphinx-book-theme
