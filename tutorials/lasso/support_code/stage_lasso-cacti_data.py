@@ -1,8 +1,9 @@
 """
-This code stages data files on Cumulus's wolf2 that are needed for the LASSO tutorial portion of the 2024 ARM Summer School.
+This code stages LASSO-CACTI data files on Cumulus's wolf2 that are needed for the LASSO tutorial portion of the 2024 ARM Summer School.
+It is assumed the source of files is the master copy of pre-staged LASSO-CACTI data in cli120's world share area.
 
 Author: William.Gustafson@pnnl.gov
-Date: 3-May-2024
+Date: 6-May-2024
 """
 
 import os
@@ -34,19 +35,25 @@ def copy_taranis(path_tutorial_stage):
 
 
 #-----------------------------------------------------------------------
-def copy_subset(sub_type, domain, dates, ens_members, config_label, path_lasso_stage, path_tutorial_stage):
+def copy_subset(sub_types, domains, dates, ens_members, config_label, path_lasso_stage, path_tutorial_stage):
     """
     Copy the requested CACTI subset files into the tutorial staging folder for the specified combinations.
+    
+    NOTE: All the simulation selection parameters are sent as lists EXCEPT for config_label.
     """
     dir_orig = os.getcwd()
     os.chdir(path_lasso_stage)
-    scale = "meso" if domain < 3 else "les"
-    for date in dates:
-        for ens_member in ens_members:
-            src = f"{date}/{ens_member}/{config_label}/{scale}/subset_d{domain}/corlasso_{sub_type}_*"
-            dst = f"{path_tutorial_stage}/lasso-cacti/"
-            cmd = f"rsync --relative {src} {dst}"
-            os.system(cmd)
+
+    for domain in domains:
+        scale = "meso" if domain < 3 else "les"
+        for date in dates:
+            for ens_member in ens_members:
+                for sub_type in sub_types:
+                    src = f"{date}/{ens_member}/{config_label}/{scale}/subset_d{domain}/corlasso_{sub_type}_*"
+                    dst = f"{path_tutorial_stage}/lasso-cacti/"
+                    cmd = f"rsync --relative {src} {dst}"
+                    os.system(cmd)
+
     os.chdir(dir_orig)
 # end copy_subset()
 
@@ -54,7 +61,7 @@ def copy_subset(sub_type, domain, dates, ens_members, config_label, path_lasso_s
 #-----------------------------------------------------------------------
 def main():
     path_lasso_stage = "/gpfs/wolf2/arm/cli120/world-shared/d3m088/cacti/staged_runs"
-    path_tutorial_stage = "/gpfs/wolf2/arm/atm124/world-shared/arm-summer-school-2024/lasso_tutorial"
+    path_tutorial_stage = "/gpfs/wolf2/arm/atm124/world-shared/arm-summer-school-2024/lasso_tutorial/cacti"
 
     ### --- sections that are already copied have been commented out --- ###
 
@@ -65,7 +72,7 @@ def main():
     # Simulation files...
     # First, copy all the domain 2 subset files for stat, met, cld, cldhamsl
     dates = [
-        "20181026",
+        "20181026", 
         "20181104",
         "20181105",
         "20181106",
@@ -122,37 +129,23 @@ def main():
         "gefs20",
     ]
     config_label = "base"
-    copy_subset(sub_type="stat", domain=2, dates=dates, ens_members=ens_members, config_label=config_label,
-                path_lasso_stage=path_lasso_stage, path_tutorial_stage=path_tutorial_stage)
-    copy_subset(sub_type="met", domain=2, dates=dates, ens_members=ens_members, config_label=config_label,
-                path_lasso_stage=path_lasso_stage, path_tutorial_stage=path_tutorial_stage)
-    copy_subset(sub_type="methamsl", domain=2, dates=dates, ens_members=ens_members, config_label=config_label,
-                path_lasso_stage=path_lasso_stage, path_tutorial_stage=path_tutorial_stage)
-    copy_subset(sub_type="cld", domain=2, dates=dates, ens_members=ens_members, config_label=config_label,
-                path_lasso_stage=path_lasso_stage, path_tutorial_stage=path_tutorial_stage)
-    copy_subset(sub_type="cldhamsl", domain=2, dates=dates, ens_members=ens_members, config_label=config_label,
-                path_lasso_stage=path_lasso_stage, path_tutorial_stage=path_tutorial_stage)
-
-
-    # Next, copy some domain 4 subset files for stat, met, cld, cldhamsl
+    subset_types = ["stat", "met", "methamsl", "cld", "cldhamsl"]
+    # copy_subset(sub_types=subset_types, domains=[2], dates=dates, ens_members=ens_members, config_label=config_label,
+    #             path_lasso_stage=path_lasso_stage, path_tutorial_stage=path_tutorial_stage)
+    
+    # Next, copy full set of domains 1, 2, 3, & 4 subset files for stat, met, cld, cldhamsl.
+    # We only want a small number of these.
     dates = [
-        "20190129",
+        "20190208",
     ]
     ens_members = [
-        "eda09",
+        "eda03",
     ]
-    config_label = "base"
-    domain = 4
-    copy_subset(sub_type="stat", domain=domain, dates=dates, ens_members=ens_members, config_label=config_label,
-                path_lasso_stage=path_lasso_stage, path_tutorial_stage=path_tutorial_stage)
-    copy_subset(sub_type="met", domain=domain, dates=dates, ens_members=ens_members, config_label=config_label,
-                path_lasso_stage=path_lasso_stage, path_tutorial_stage=path_tutorial_stage)
-    copy_subset(sub_type="methamsl", domain=domain, dates=dates, ens_members=ens_members, config_label=config_label,
-                path_lasso_stage=path_lasso_stage, path_tutorial_stage=path_tutorial_stage)
-    copy_subset(sub_type="cld", domain=domain, dates=dates, ens_members=ens_members, config_label=config_label,
-                path_lasso_stage=path_lasso_stage, path_tutorial_stage=path_tutorial_stage)
-    copy_subset(sub_type="cldhamsl", domain=domain, dates=dates, ens_members=ens_members, config_label=config_label,
-                path_lasso_stage=path_lasso_stage, path_tutorial_stage=path_tutorial_stage)
+    config_label = "morr"
+    domains = [1, 2, 3, 4]
+    subset_types = ["stat", "met", "methamsl", "cld", "cldhamsl"]
+    # copy_subset(sub_types=subset_types, domains=domains, dates=dates, ens_members=ens_members, config_label=config_label,
+    #             path_lasso_stage=path_lasso_stage, path_tutorial_stage=path_tutorial_stage)
 
 # end main()
 
