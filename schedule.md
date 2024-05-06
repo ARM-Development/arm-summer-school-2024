@@ -38,7 +38,8 @@
 | 08:30 AM - 09:30 AM  | An Introduction to LES Modeling        | Thijs Heus                         |
 | 09:30 AM - 10:00 AM  | LES Modeling with COMBLE               | Ann Fridland                       |
 | 10:00 AM - 10:30 AM  | Coffee Break                           |                                    |
-| 10:30 AM - 12:00 PM  | Analyzing Data from LASSO at Scale     | Bill Gustafson + Max Grover        |
+| 10:30 AM - 11:15 AM  | Analyzing Data from LASSO at Scale     | Bill Gustafson + Max Grover        |
+| 11:15 AM - 12:00 PM  | Instrument Simulators 101 with COMBLE  | Bobby Jackson                      |
 | 12:00 PM - 01:00 PM  | Working Lunch: Debugging Dask          | Max Grover                         |
 | 01:00 PM - 05:00 PM  | Break into Groups: Ask you Questions!  |                                    |
 
