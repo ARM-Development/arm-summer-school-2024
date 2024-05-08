@@ -10,7 +10,7 @@ import glob
 ## Tim Juliano: tjuliano@ucar.edu
 ## Ann Fridlind: ann.fridlind@nasa.gov
 
-PATH_OBS = './data_files/'
+PATH_OBS = '/gpfs/wolf2/arm/atm124/world-shared/arm-summer-school-2024/comble-mip/'
 
 
 def sat_pres(x):
