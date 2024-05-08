@@ -1,7 +1,10 @@
 format: jb-book
 root: README
 parts:
-- caption: Preparation
+- caption: Logistics
+  chapters:
+    - file: schedule
+- caption: Preparation + Logistics
   chapters:
     - file: preliminary/checklist_index
       sections:
@@ -12,13 +15,18 @@ parts:
     - file: preliminary/skills_refresher_index
       sections:
         - file: preliminary/skills-refresher/swc
+- caption: Projects
+  chapters:
+    - file: projects/projects.md
 - caption: Tutorials
   chapters:
     - file: tutorials/index
       sections:
         - file: tutorials/pyart/pyart-basics
         - file: tutorials/pyart/pyart-gridding
+        - file: tutorials/act/act_tutorial_comble
         - file: tutorials/xarray/xarray-intro
         - file: tutorial/lasso/lasso-shcu
         - file: tutorials/lasso/lasso-cacti
         - file: tutorials/lasso/lasso-cacti_part2
+        - file: tutorials/xarray/xwrf-xarray-intro

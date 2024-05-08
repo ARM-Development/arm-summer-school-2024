@@ -19,6 +19,9 @@ dependencies:
   - matplotlib
   - cartopy
   - jupyter_server
+  - xwrf
+  - geoviews
   - pip
   - pip:
       - sphinx-book-theme
+      - git+https://github.com/EUREC4A-UK/lagtraj
