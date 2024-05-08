@@ -13,7 +13,7 @@ dependencies:
   - holoviews
   - hvplot
   - datashader
-  - act-atmos
+  - act-atmos>=2.0.5
   - metpy
   - plotly
   - matplotlib
