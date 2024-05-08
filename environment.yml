@@ -24,3 +24,4 @@ dependencies:
   - pip:
       - sphinx-book-theme
       - git+https://github.com/EUREC4A-UK/lagtraj
+      - act-atmos=2.0.5
