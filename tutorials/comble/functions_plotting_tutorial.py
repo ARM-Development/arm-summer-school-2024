@@ -10,7 +10,7 @@ import glob
 ## Tim Juliano: tjuliano@ucar.edu
 ## Ann Fridlind: ann.fridlind@nasa.gov
 
-PATH = './data_files/'
+PATH_OBS = './data_files/'
 
 
 def sat_pres(x):
@@ -23,7 +23,7 @@ def sat_pres(x):
     return 6.112*np.exp(17.67*x/(243.5 + x)) 
 
 
-def load_calipso(case='20200313',t_filter = 1.,PATH=PATH):
+def load_calipso(case='20200313',t_filter = 1.,PATH=PATH_OBS):
     
     ## load coincident Calipso retrievals
     ## __input__
@@ -63,7 +63,7 @@ def load_calipso(case='20200313',t_filter = 1.,PATH=PATH):
     return data
 
 
-def load_sentinel(case='20200313',t_filter = 1.,sza_filter = 80.,PATH=PATH):
+def load_sentinel(case='20200313',t_filter = 1.,sza_filter = 80.,PATH=PATH_OBS):
     
     ## load coincident Sentinel retrievals
     ## __input__
@@ -97,7 +97,7 @@ def load_sentinel(case='20200313',t_filter = 1.,sza_filter = 80.,PATH=PATH):
     return data
 
 
-def load_viirs(case='20200313',t_filter = 1.,sza_filter = 80.,PATH=PATH):
+def load_viirs(case='20200313',t_filter = 1.,sza_filter = 80.,PATH=PATH_OBS):
     
     ## load coincident VIIRS retrievals
     ## __input__
@@ -138,7 +138,7 @@ def load_viirs(case='20200313',t_filter = 1.,sza_filter = 80.,PATH=PATH):
     return data
 
 
-def load_modis(case='20200313',t_filter = 1.,sza_filter = 80.,PATH=PATH):
+def load_modis(case='20200313',t_filter = 1.,sza_filter = 80.,PATH=PATH_OBS):
     
     ## load coincident MODIS retrievals
     ## __input__
@@ -175,7 +175,7 @@ def load_modis(case='20200313',t_filter = 1.,sza_filter = 80.,PATH=PATH):
     return data
 
 
-def load_maclwp(case='20200313',t_filter = 1.,PATH=PATH):
+def load_maclwp(case='20200313',t_filter = 1.,PATH=PATH_OBS):
     
     ## load coincident MAC-LWP retrievals (Elsaesser et al., 2017)
     ## __input__
@@ -208,7 +208,7 @@ def load_maclwp(case='20200313',t_filter = 1.,PATH=PATH):
     return data_mac
 
 
-def load_kazrkollias(case='20200313',t_filter = 1.,PATH=PATH,aux_dat=pd.DataFrame()):
+def load_kazrkollias(case='20200313',t_filter = 1.,PATH=PATH_OBS,aux_dat=pd.DataFrame()):
     
     ## load coincident KAZR retrievals at the Andenes ARM site
     ## __input__
@@ -247,7 +247,7 @@ def load_kazrkollias(case='20200313',t_filter = 1.,PATH=PATH,aux_dat=pd.DataFram
     return p_df
 
 
-def load_kazrclough(case='20200313',t_filter = 1.,PATH=PATH):
+def load_kazrclough(case='20200313',t_filter = 1.,PATH=PATH_OBS):
     
     ## load coincident KAZR retrievals at the Andenes ARM site
     ## __input__
@@ -270,7 +270,7 @@ def load_kazrclough(case='20200313',t_filter = 1.,PATH=PATH):
     return p_df
 
 
-def load_radflux(case='20200313',t_filter = 1.,PATH=PATH):
+def load_radflux(case='20200313',t_filter = 1.,PATH=PATH_OBS):
     
     ## load coincident radiative flux retrievals at the Andenes ARM site
     ## __input__
@@ -295,7 +295,7 @@ def load_radflux(case='20200313',t_filter = 1.,PATH=PATH):
     return p_df
 
 
-def load_aeri(case='20200313',t_filter = 1.,PATH=PATH):
+def load_aeri(case='20200313',t_filter = 1.,PATH=PATH_OBS):
     
     ## load coincident AERI retrievals at the Andenes ARM site
     ## __input__
@@ -325,7 +325,7 @@ def load_aeri(case='20200313',t_filter = 1.,PATH=PATH):
     return data
 
 
-def load_carraflux(case='20200313',PATH=PATH):
+def load_carraflux(case='20200313',PATH=PATH_OBS):
 
     ## load CARRA surface fluxes
     if case == '20200313':
@@ -345,7 +345,7 @@ def load_carraflux(case='20200313',PATH=PATH):
     return p_df
 
 
-def load_flux(case='20200313',t_filter = 1.,PATH=PATH):
+def load_flux(case='20200313',t_filter = 1.,PATH=PATH_OBS):
     
     ## load ECOR and Bulk surface turbulent fluxes, obtained near Andenenes
     if case == '20200313':
@@ -379,7 +379,7 @@ def load_flux(case='20200313',t_filter = 1.,PATH=PATH):
     return pd.concat([p_df,p_df_2])
 
 
-def load_rs(case='20200313',t_filter = 1.,PATH=PATH):
+def load_rs(case='20200313',t_filter = 1.,PATH=PATH_OBS):
     
     ## load radiosonde obs
     ## __input__
@@ -430,7 +430,7 @@ def load_rs(case='20200313',t_filter = 1.,PATH=PATH):
     return rs_col
 
 
-def load_era5(case='20200313',PATH=PATH):
+def load_era5(case='20200313',PATH=PATH_OBS):
     
     ## load ERA5 data along trajectory
     ## __input__
