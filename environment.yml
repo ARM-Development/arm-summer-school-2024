@@ -21,6 +21,10 @@ dependencies:
   - jupyter_server
   - xwrf
   - geoviews
+  - netCDF4
+  - numpy
+  - netCDF4
+  - pathlib
   - pip
   - pip:
       - sphinx-book-theme

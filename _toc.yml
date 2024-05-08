@@ -30,4 +30,5 @@ parts:
         - file: tutorials/lasso/lasso-cacti
         - file: tutorials/lasso/lasso-cacti_part2
         - file: tutorials/xarray/xwrf-xarray-intro
+        - file: tutorials/comble/comble-mip-tutorial
         - file: tutorials/emc2/InstrumentSimulatorsForModelEvaluation.ipynb
