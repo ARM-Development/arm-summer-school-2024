@@ -491,17 +491,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-and-path-settings">Imports and path settings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-observational-data">Read in observational data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#here-we-consider-doe-arm-data-streams-several-satellite-data-sources-as-well-two-reanalyses-products-each-of-these-data-streams-is-read-in-using-a-unique-function-that-is-defined-in-functions-plotting-tutorial-py-these-data-sets-are-important-for-us-to-evaluate-our-models">Here, we consider DOE ARM data streams, several satellite data sources, as well two reanalyses products. Each of these data streams is read in using a unique function that is defined in ‘functions_plotting_tutorial.py’. These data sets are important for us to evaluate our models.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-we-have-already-post-processed-each-of-the-below-observational-data-sets-we-expect-that-you-will-use-the-post-processed-satellite-and-reanalyses-data-sets-however-since-one-of-the-foci-of-the-summer-school-is-becoming-more-comfortable-working-with-arm-data-you-must-work-with-the-raw-arm-data-sets-from-the-data-discovery-and-post-process-the-data-yourself"><ins>NOTE</ins>: We have already post-processed each of the below observational data sets. We expect that you will use the post-processed satellite and reanalyses data sets. However, since one of the foci of the Summer School is becoming more comfortable working with ARM data, you <ins>must</ins> work with the raw ARM data sets from the Data Discovery and post-process the data yourself!</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-mip-model-outputs">Read in MIP model outputs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-compare-two-participating-les-models-the-weather-research-and-forecasting-wrf-model-and-the-distributed-hydrodynamic-aerosol-radiation-microphysics-application-dharma">Let’s compare two participating LES models: the Weather Research and Forecasting (WRF) model and the Distributed Hydrodynamic-Aerosol-Radiation-Microphysics Application (DHARMA).</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-we-will-load-in-specified-1d-variables-time-dimension-only-from-the-simulation-outputs-of-these-two-models-to-compare-with-some-of-the-observational-products-it-is-important-to-understand-how-close-our-simulations-are-to-the-reanalyses-and-observations-with-respect-to-surface-related-variables-because-caos-are-very-strongly-surface-forced-turbulent-exchanges-between-the-ocean-and-atmosphere-largely-dictate-how-the-cloud-system-evolves">First, we will load in specified 1D variables (time dimension only) from the simulation outputs of these two models to compare with some of the observational products. It is important to understand how close our simulations are to the reanalyses and observations with respect to surface-related variables because CAOs are very strongly surface forced. Turbulent exchanges between the ocean and atmosphere largely dictate how the cloud system evolves.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-observational-data">Read in observational data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-mip-model-outputs">Read in MIP model outputs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-observations-and-mip-outputs">Plotting observations and MIP outputs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-now-read-in-and-plot-some-surface-variables">Let’s now read in and plot some surface variables</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-now-read-in-and-plot-some-cloud-centric-variables">Let’s now read in and plot some cloud-centric variables</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-lastly-some-vertical-profiles-note-that-we-have-era5-during-the-entire-particle-trajectory-and-comble-measurements-only-at-the-last-time-t-18h">And lastly, some vertical profiles. Note that we have ERA5 during the entire particle trajectory and COMBLE measurements only at the last time (t=18h)</a></li>
 </ul>
@@ -552,11 +545,8 @@ document.write(`
 </section>
 <section id="read-in-observational-data">
 <h2>Read in observational data<a class="headerlink" href="#read-in-observational-data" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
-<section id="here-we-consider-doe-arm-data-streams-several-satellite-data-sources-as-well-two-reanalyses-products-each-of-these-data-streams-is-read-in-using-a-unique-function-that-is-defined-in-functions-plotting-tutorial-py-these-data-sets-are-important-for-us-to-evaluate-our-models">
-<h3>Here, we consider DOE ARM data streams, several satellite data sources, as well two reanalyses products. Each of these data streams is read in using a unique function that is defined in ‘functions_plotting_tutorial.py’. These data sets are important for us to evaluate our models.<a class="headerlink" href="#here-we-consider-doe-arm-data-streams-several-satellite-data-sources-as-well-two-reanalyses-products-each-of-these-data-streams-is-read-in-using-a-unique-function-that-is-defined-in-functions-plotting-tutorial-py-these-data-sets-are-important-for-us-to-evaluate-our-models" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
-</section>
-<section id="note-we-have-already-post-processed-each-of-the-below-observational-data-sets-we-expect-that-you-will-use-the-post-processed-satellite-and-reanalyses-data-sets-however-since-one-of-the-foci-of-the-summer-school-is-becoming-more-comfortable-working-with-arm-data-you-must-work-with-the-raw-arm-data-sets-from-the-data-discovery-and-post-process-the-data-yourself">
-<h3><ins>NOTE</ins>: We have already post-processed each of the below observational data sets. We expect that you will use the post-processed satellite and reanalyses data sets. However, since one of the foci of the Summer School is becoming more comfortable working with ARM data, you <ins>must</ins> work with the raw ARM data sets from the Data Discovery and post-process the data yourself!<a class="headerlink" href="#note-we-have-already-post-processed-each-of-the-below-observational-data-sets-we-expect-that-you-will-use-the-post-processed-satellite-and-reanalyses-data-sets-however-since-one-of-the-foci-of-the-summer-school-is-becoming-more-comfortable-working-with-arm-data-you-must-work-with-the-raw-arm-data-sets-from-the-data-discovery-and-post-process-the-data-yourself" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<p>Here, we consider DOE ARM data streams, several satellite data sources, as well two reanalyses products. Each of these data streams is read in using a unique function that is defined in ‘functions_plotting_tutorial.py’. These data sets are important for us to evaluate our models.</p>
+<p><strong><ins>NOTE</ins>: We have already post-processed each of the below observational data sets. We expect that you will use the post-processed satellite and reanalyses data sets. However, since one of the foci of the Summer School is becoming more comfortable working with ARM data, you <ins>must</ins> work with the raw ARM data sets from the Data Discovery and post-process the data yourself!</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load DOE ARM data streams first</span>
@@ -597,36 +587,42 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>../../data_files/anxsondewnpnM1.b1.20200313.172600.cdf
-../../data_files/anxsondewnpnM1.b1.20200313.232200.cdf
-../../data_files/anxsondewnpnM1.b1.20200313.052700.cdf
-../../data_files/anxsondewnpnM1.b1.20200313.112600.cdf
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data_files/anxsondewnpnM1.b1.20200313.052700.cdf
+data_files/anxsondewnpnM1.b1.20200313.172600.cdf
+data_files/anxsondewnpnM1.b1.20200313.232200.cdf
+data_files/anxsondewnpnM1.b1.20200313.112600.cdf
 KAZR (Kollias): here using auxiliary field to estimate cloud-top temperature
-../../data_files/theta_temp_rh_sh_uvw_sst_along_trajectory_era5ml_28h_end_2020-03-13-18.nc
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/derecho/scratch/tjuliano/doe_comble/doe_arm_summer_school/arm-summer-school-2024/tutorials/comble/functions_plotting_tutorial.py:240: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  aux_dat[&#39;zdiff&#39;] = np.abs(aux_dat[&#39;zf&#39;] - np.float(p_df[&#39;zi&#39;]))
+/glade/derecho/scratch/tjuliano/doe_comble/doe_arm_summer_school/arm-summer-school-2024/tutorials/comble/functions_plotting_tutorial.py:241: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  aux_dat[&#39;zdiff.25&#39;] = np.abs(aux_dat[&#39;zf&#39;] - np.float(p_df[&#39;zi.25&#39;]))
+/glade/derecho/scratch/tjuliano/doe_comble/doe_arm_summer_school/arm-summer-school-2024/tutorials/comble/functions_plotting_tutorial.py:242: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  aux_dat[&#39;zdiff.75&#39;] = np.abs(aux_dat[&#39;zf&#39;] - np.float(p_df[&#39;zi.75&#39;]))
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./data_files/theta_temp_rh_sh_uvw_sst_along_trajectory_era5ml_28h_end_2020-03-13-18.nc
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-</section>
 <section id="read-in-mip-model-outputs">
 <h2>Read in MIP model outputs<a class="headerlink" href="#read-in-mip-model-outputs" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
-<section id="lets-compare-two-participating-les-models-the-weather-research-and-forecasting-wrf-model-and-the-distributed-hydrodynamic-aerosol-radiation-microphysics-application-dharma">
-<h3>Let’s compare two participating LES models: the Weather Research and Forecasting (WRF) model and the Distributed Hydrodynamic-Aerosol-Radiation-Microphysics Application (DHARMA).<a class="headerlink" href="#lets-compare-two-participating-les-models-the-weather-research-and-forecasting-wrf-model-and-the-distributed-hydrodynamic-aerosol-radiation-microphysics-application-dharma" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<p>Let’s compare two participating LES models: the Weather Research and Forecasting (WRF) model and the Distributed Hydrodynamic-Aerosol-Radiation-Microphysics Application (DHARMA).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we will use the &#39;FixN&#39; model configuration (this is the baseline setup for the MIP)</span>
 <span class="c1"># more details about the MIP model configuration:</span>
 <span class="c1"># https://arm-development.github.io/comble-mip/main_configuration.html</span>
-<span class="n">sim_keyword_wrf</span> <span class="o">=</span> <span class="s1">&#39;wrf/sandbox/WRF_Lx25_dx100_FixN.&#39;</span>
-<span class="n">sim_keyword_dharma</span> <span class="o">=</span> <span class="s1">&#39;dharma/sandbox/DHARMA_Lx25_dx200_FixN.&#39;</span>
+<span class="n">sim_keyword_wrf</span> <span class="o">=</span> <span class="s1">&#39;wrf/WRF_Lx25_dx100_FixN.&#39;</span>
+<span class="n">sim_keyword_dharma</span> <span class="o">=</span> <span class="s1">&#39;dharma/DHARMA_Lx25_dx200_FixN.&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="first-we-will-load-in-specified-1d-variables-time-dimension-only-from-the-simulation-outputs-of-these-two-models-to-compare-with-some-of-the-observational-products-it-is-important-to-understand-how-close-our-simulations-are-to-the-reanalyses-and-observations-with-respect-to-surface-related-variables-because-caos-are-very-strongly-surface-forced-turbulent-exchanges-between-the-ocean-and-atmosphere-largely-dictate-how-the-cloud-system-evolves">
-<h3>First, we will load in specified 1D variables (time dimension only) from the simulation outputs of these two models to compare with some of the observational products. It is important to understand how close our simulations are to the reanalyses and observations with respect to surface-related variables because CAOs are very strongly surface forced. Turbulent exchanges between the ocean and atmosphere largely dictate how the cloud system evolves.<a class="headerlink" href="#first-we-will-load-in-specified-1d-variables-time-dimension-only-from-the-simulation-outputs-of-these-two-models-to-compare-with-some-of-the-observational-products-it-is-important-to-understand-how-close-our-simulations-are-to-the-reanalyses-and-observations-with-respect-to-surface-related-variables-because-caos-are-very-strongly-surface-forced-turbulent-exchanges-between-the-ocean-and-atmosphere-largely-dictate-how-the-cloud-system-evolves" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<p>First, we will load in specified 1D variables (time dimension only) from the simulation outputs of these two models to compare with some of the observational products. It is important to understand how close our simulations are to the reanalyses and observations with respect to surface-related variables because CAOs are very strongly surface forced. Turbulent exchanges between the ocean and atmosphere largely dictate how the cloud system evolves.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define variables</span>
@@ -643,21 +639,22 @@ KAZR (Kollias): here using auxiliary field to estimate cloud-top temperature
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading variables: f(time)
-../../output_les/wrf/sandbox/WRF_Lx25_dx100_FixN.nc
+output_les/wrf/WRF_Lx25_dx100_FixN.nc
 Loading variables: f(time,height)
-../../output_les/wrf/sandbox/WRF_Lx25_dx100_FixN.nc
+output_les/wrf/WRF_Lx25_dx100_FixN.nc
 Loading variables: f(time)
-../../output_les/dharma/sandbox/DHARMA_Lx25_dx200_FixN.nc
+output_les/dharma/DHARMA_Lx25_dx200_FixN.nc
 Loading variables: f(time,height)
-../../output_les/dharma/sandbox/DHARMA_Lx25_dx200_FixN.nc
+output_les/dharma/DHARMA_Lx25_dx200_FixN.nc
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-</section>
 <section id="plotting-observations-and-mip-outputs">
 <h2>Plotting observations and MIP outputs<a class="headerlink" href="#plotting-observations-and-mip-outputs" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
+<section id="lets-now-read-in-and-plot-some-surface-variables">
+<h3>Let’s now read in and plot some surface variables<a class="headerlink" href="#lets-now-read-in-and-plot-some-surface-variables" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>hfss –&gt; surface sensible heat flux (W/m2)<br />
 hfls –&gt; surface latent heat flux (W/m2)<br />
 ts –&gt; skin temperature (K)<br />
@@ -670,15 +667,16 @@ Note that t=0h corresponds to the ice edge</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.10/site-packages/matplotlib/axes/_axes.py:1185: RuntimeWarning: All-NaN axis encountered
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/work/tjuliano/conda-envs/myclone/lib/python3.9/site-packages/matplotlib/axes/_axes.py:1180: RuntimeWarning: All-NaN axis encountered
   miny = np.nanmin(masked_verts[..., 1])
-/opt/conda/lib/python3.10/site-packages/matplotlib/axes/_axes.py:1186: RuntimeWarning: All-NaN axis encountered
+/glade/work/tjuliano/conda-envs/myclone/lib/python3.9/site-packages/matplotlib/axes/_axes.py:1181: RuntimeWarning: All-NaN axis encountered
   maxy = np.nanmax(masked_verts[..., 1])
 </pre></div>
 </div>
-<img alt="../../_images/dce951ad8b7ad2cc296983e019c769ac6c219a7437a1cfebc0a633a834ea9fa4.png" src="../../_images/dce951ad8b7ad2cc296983e019c769ac6c219a7437a1cfebc0a633a834ea9fa4.png" />
+<img alt="../../_images/dd68bb5ae04072c5e0d26ec62ad0c6eb5d54868eadf53ddaa8983d7733de00e9.png" src="../../_images/dd68bb5ae04072c5e0d26ec62ad0c6eb5d54868eadf53ddaa8983d7733de00e9.png" />
 </div>
 </div>
+</section>
 <section id="lets-now-read-in-and-plot-some-cloud-centric-variables">
 <h3>Let’s now read in and plot some cloud-centric variables<a class="headerlink" href="#lets-now-read-in-and-plot-some-cloud-centric-variables" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>cth –&gt; cloud top height (m)<br />
@@ -702,15 +700,15 @@ ctt –&gt; cloud top temperature (K)</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading variables: f(time)
-../../output_les/wrf/sandbox/WRF_Lx25_dx100_FixN.nc
+output_les/wrf/WRF_Lx25_dx100_FixN.nc
 Loading variables: f(time,height)
-../../output_les/wrf/sandbox/WRF_Lx25_dx100_FixN.nc
+output_les/wrf/WRF_Lx25_dx100_FixN.nc
 computing inversion height, cloud-top height, and cloud-top temperature
 using liquid(-ice) potential temperature
 Loading variables: f(time)
-../../output_les/dharma/sandbox/DHARMA_Lx25_dx200_FixN.nc
+output_les/dharma/DHARMA_Lx25_dx200_FixN.nc
 Loading variables: f(time,height)
-../../output_les/dharma/sandbox/DHARMA_Lx25_dx200_FixN.nc
+output_les/dharma/DHARMA_Lx25_dx200_FixN.nc
 computing inversion height, cloud-top height, and cloud-top temperature
 using liquid(-ice) potential temperature
 </pre></div>
@@ -724,13 +722,13 @@ using liquid(-ice) potential temperature
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.10/site-packages/matplotlib/axes/_axes.py:1185: RuntimeWarning: All-NaN axis encountered
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/work/tjuliano/conda-envs/myclone/lib/python3.9/site-packages/matplotlib/axes/_axes.py:1180: RuntimeWarning: All-NaN axis encountered
   miny = np.nanmin(masked_verts[..., 1])
-/opt/conda/lib/python3.10/site-packages/matplotlib/axes/_axes.py:1186: RuntimeWarning: All-NaN axis encountered
+/glade/work/tjuliano/conda-envs/myclone/lib/python3.9/site-packages/matplotlib/axes/_axes.py:1181: RuntimeWarning: All-NaN axis encountered
   maxy = np.nanmax(masked_verts[..., 1])
 </pre></div>
 </div>
-<img alt="../../_images/dc373ea84dc700547deca761702f8206ab5824f0ad95d5090782853b80b8d4c6.png" src="../../_images/dc373ea84dc700547deca761702f8206ab5824f0ad95d5090782853b80b8d4c6.png" />
+<img alt="../../_images/5c5773b23bee45e135afa2544c5f3faf4079182e8e5e91869d3eef614c0ce26f.png" src="../../_images/5c5773b23bee45e135afa2544c5f3faf4079182e8e5e91869d3eef614c0ce26f.png" />
 </div>
 </div>
 </section>
@@ -752,7 +750,7 @@ wd –&gt; wind direction (deg)</p>
 Computing wind direction
 </pre></div>
 </div>
-<img alt="../../_images/9266f73414106bf010b9ab6ea6a1813f93434509bc33a29eab2e81546ca5fdd0.png" src="../../_images/9266f73414106bf010b9ab6ea6a1813f93434509bc33a29eab2e81546ca5fdd0.png" />
+<img alt="../../_images/735ccff2bca465dff532db8907bfc4534ba5b284303258acff22272e6e8755e0.png" src="../../_images/735ccff2bca465dff532db8907bfc4534ba5b284303258acff22272e6e8755e0.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x600 with 0 Axes&gt;
 </pre></div>
 </div>
@@ -827,17 +825,10 @@ Computing wind direction
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-and-path-settings">Imports and path settings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-observational-data">Read in observational data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#here-we-consider-doe-arm-data-streams-several-satellite-data-sources-as-well-two-reanalyses-products-each-of-these-data-streams-is-read-in-using-a-unique-function-that-is-defined-in-functions-plotting-tutorial-py-these-data-sets-are-important-for-us-to-evaluate-our-models">Here, we consider DOE ARM data streams, several satellite data sources, as well two reanalyses products. Each of these data streams is read in using a unique function that is defined in ‘functions_plotting_tutorial.py’. These data sets are important for us to evaluate our models.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-we-have-already-post-processed-each-of-the-below-observational-data-sets-we-expect-that-you-will-use-the-post-processed-satellite-and-reanalyses-data-sets-however-since-one-of-the-foci-of-the-summer-school-is-becoming-more-comfortable-working-with-arm-data-you-must-work-with-the-raw-arm-data-sets-from-the-data-discovery-and-post-process-the-data-yourself"><ins>NOTE</ins>: We have already post-processed each of the below observational data sets. We expect that you will use the post-processed satellite and reanalyses data sets. However, since one of the foci of the Summer School is becoming more comfortable working with ARM data, you <ins>must</ins> work with the raw ARM data sets from the Data Discovery and post-process the data yourself!</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-mip-model-outputs">Read in MIP model outputs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-compare-two-participating-les-models-the-weather-research-and-forecasting-wrf-model-and-the-distributed-hydrodynamic-aerosol-radiation-microphysics-application-dharma">Let’s compare two participating LES models: the Weather Research and Forecasting (WRF) model and the Distributed Hydrodynamic-Aerosol-Radiation-Microphysics Application (DHARMA).</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-we-will-load-in-specified-1d-variables-time-dimension-only-from-the-simulation-outputs-of-these-two-models-to-compare-with-some-of-the-observational-products-it-is-important-to-understand-how-close-our-simulations-are-to-the-reanalyses-and-observations-with-respect-to-surface-related-variables-because-caos-are-very-strongly-surface-forced-turbulent-exchanges-between-the-ocean-and-atmosphere-largely-dictate-how-the-cloud-system-evolves">First, we will load in specified 1D variables (time dimension only) from the simulation outputs of these two models to compare with some of the observational products. It is important to understand how close our simulations are to the reanalyses and observations with respect to surface-related variables because CAOs are very strongly surface forced. Turbulent exchanges between the ocean and atmosphere largely dictate how the cloud system evolves.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-observational-data">Read in observational data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-mip-model-outputs">Read in MIP model outputs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-observations-and-mip-outputs">Plotting observations and MIP outputs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-now-read-in-and-plot-some-surface-variables">Let’s now read in and plot some surface variables</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-now-read-in-and-plot-some-cloud-centric-variables">Let’s now read in and plot some cloud-centric variables</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-lastly-some-vertical-profiles-note-that-we-have-era5-during-the-entire-particle-trajectory-and-comble-measurements-only-at-the-last-time-t-18h">And lastly, some vertical profiles. Note that we have ERA5 during the entire particle trajectory and COMBLE measurements only at the last time (t=18h)</a></li>
 </ul>
