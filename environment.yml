@@ -6,6 +6,7 @@ dependencies:
   - python=3.11
   - jupyter-book
   - jupyterlab
+  - pandas
   - xarray
   - dask
   - arm_pyart
@@ -13,7 +14,10 @@ dependencies:
   - hvplot
   - datashader
   - act-atmos
+  - metpy
+  - plotly
   - matplotlib
+  - cartopy
   - jupyter_server
   - xwrf
   - geoviews
