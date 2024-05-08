@@ -27,3 +27,4 @@ parts:
         - file: tutorials/act/act_tutorial_comble
         - file: tutorials/xarray/xarray-intro
         - file: tutorials/xarray/xwrf-xarray-intro
+        - file: tutorials/emc2/InstrumentSimulatorsForModelEvaluation.ipynb
