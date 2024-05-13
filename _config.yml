@@ -51,7 +51,7 @@ sphinx:
       github_url: https://github.com/ARM-Development/arm-summer-school-2024
       icon_links:
         - name: YouTube
-          url: https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw
+          url: https://www.youtube.com/@armuserfacility9698
           icon: fab fa-youtube-square
           type: fontawesome
       launch_buttons:
