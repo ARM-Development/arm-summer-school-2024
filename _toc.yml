@@ -1,10 +1,11 @@
 format: jb-book
 root: README
 parts:
-- caption: Logistics
+- caption: Logistics + Information
   chapters:
     - file: schedule
-- caption: Preparation + Logistics
+    - file: instructors
+- caption: Preparation
   chapters:
     - file: preliminary/checklist_index
       sections:
