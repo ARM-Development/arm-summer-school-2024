@@ -18,6 +18,7 @@ dependencies:
   - plotly
   - matplotlib
   - cartopy
+  - ffmpeg
   - jupyter_server
   - xwrf
   - geoviews
