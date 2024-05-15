@@ -23,7 +23,7 @@ This summer school, aimed at a broad audience, will:
 
 ## Authors
 
-[Max Grover](@mgrover1), [Scott Collis](https://github.com/scollis)
+ARM Summer School 2024 Instructors
 
 ### Contributors
 
