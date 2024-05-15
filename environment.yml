@@ -25,6 +25,7 @@ dependencies:
   - numpy
   - netCDF4
   - pathlib
+  - scikit-learn
   - pip
   - pip:
       - sphinx-book-theme

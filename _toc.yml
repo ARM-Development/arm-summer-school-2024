@@ -34,3 +34,4 @@ parts:
         - file: tutorials/xarray/xwrf-xarray-intro
         - file: tutorials/comble/comble-mip-tutorial
         - file: tutorials/emc2/InstrumentSimulatorsForModelEvaluation.ipynb
+        - file: tutorials/machine_learning/ARM_DQO_Spike_Detection
