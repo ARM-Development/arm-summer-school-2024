@@ -3677,7 +3677,7 @@ Attributes: (12/33)
 <p>Here, the most intense precipitation is located at (-11 km, -8 km).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">&quot;/ccsopen/proj/atm133/wrf/raw_output/emc2_prep_2020-03-13_18:00:00.nc&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">&quot;emc2_prep_2020-03-13_18:00:00.nc&quot;</span><span class="p">)</span>
 <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;qpi&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">hgt</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -3692,7 +3692,7 @@ Attributes: (12/33)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use DHARMA model since format/microphysics scheme are geared to that</span>
-<span class="n">WRF</span> <span class="o">=</span> <span class="n">emc2</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">DHARMA</span><span class="p">(</span><span class="s2">&quot;/ccsopen/proj/atm133/wrf/raw_output/emc2_prep_2020-03-13_18:00:00.nc&quot;</span><span class="p">,</span> <span class="n">single_pi_class</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">WRF</span> <span class="o">=</span> <span class="n">emc2</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">DHARMA</span><span class="p">(</span><span class="s2">&quot;emc2_prep_2020-03-13_18:00:00.nc&quot;</span><span class="p">,</span> <span class="n">single_pi_class</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
