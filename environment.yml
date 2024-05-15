@@ -6,22 +6,27 @@ dependencies:
   - python=3.11
   - jupyter-book
   - jupyterlab
+  - pandas
   - xarray
   - dask
   - arm_pyart
   - holoviews
   - hvplot
   - datashader
-  - act-atmos
+  - act-atmos>=2.0.5
+  - metpy
+  - plotly
   - matplotlib
+  - cartopy
   - jupyter_server
   - xwrf
   - geoviews
-  - scikit-learn
+  - netCDF4
   - numpy
-  - plotly
+  - netCDF4
+  - pathlib
+  - scikit-learn
   - pip
   - pip:
       - sphinx-book-theme
       - git+https://github.com/EUREC4A-UK/lagtraj
-      - act-atmos=2.0.5
