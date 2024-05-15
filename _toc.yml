@@ -4,6 +4,7 @@ parts:
 - caption: Logistics + Information
   chapters:
     - file: schedule
+    - file: recommendations
     - file: instructors
 - caption: Preparation
   chapters:
