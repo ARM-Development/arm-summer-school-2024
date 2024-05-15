@@ -1,10 +1,11 @@
 format: jb-book
 root: README
 parts:
-- caption: Logistics
+- caption: Logistics + Information
   chapters:
     - file: schedule
-- caption: Preparation + Logistics
+    - file: instructors
+- caption: Preparation
   chapters:
     - file: preliminary/checklist_index
       sections:
@@ -26,5 +27,10 @@ parts:
         - file: tutorials/pyart/pyart-gridding
         - file: tutorials/act/act_tutorial_comble
         - file: tutorials/xarray/xarray-intro
+        - file: tutorials/lasso/lasso-shcu
+        - file: tutorials/lasso/lasso-shcu_part2
+        - file: tutorials/lasso/lasso-cacti
+        - file: tutorials/lasso/lasso-cacti_part2
         - file: tutorials/xarray/xwrf-xarray-intro
+        - file: tutorials/comble/comble-mip-tutorial
         - file: tutorials/emc2/InstrumentSimulatorsForModelEvaluation.ipynb
