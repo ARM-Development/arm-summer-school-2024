@@ -15,7 +15,7 @@ The following list of scientists and software engineers are serving as instructo
 | William Gustafson | Pacific Northwest National Laboratory | -[Professional Website](https://www.pnnl.gov/people/william-i-gustafson-jr) <br> -[Github Link](https://github.com/wgustafson)| <img src="images/headshots/gustafson-headshot.jpg" alt="William Gustafson" width="200"/>
 | Maxwell Grover | Argonne National Laboratory | -[Professional Website](https://www.anl.gov/profile/maxwell-grover) <br> -[Github Link](https://github.com/mgrover1)| <img src="images/headshots/grover-headshot.jpeg" alt="William Gustafson" width="200"/>
 | Ya-Chien Feng | Pacific Northwest National Laboratory | -[Professional Website](https://www.pnnl.gov/science/staff/staff_info.asp?staff_num=10752)| <img src="images/headshots/feng-headshot.png" alt="Ya-Chien Feng" width="200"/>
-| Mia Li | Cooperative Institute for Severe and High-Impact Weather Research and Operations | -[Github](https://github.com/lishanlitamu)| <img src="images/headshots/li-headshot.JPG" alt="William Gustafson" width="200"/>
+| Mia Li | Cooperative Institute for Severe and High-Impact Weather Research and Operations | -[Github](https://github.com/lishanlitamu)| <img src="images/headshots/li-headshot.JPG" alt="Mia Li" width="200"/>
 | Maxwell Grover | Argonne National Laboratory | -[Professional Website](https://www.anl.gov/profile/maxwell-grover) <br> -[Github Link](https://github.com/mgrover1)| <img src="images/headshots/grover-headshot.jpeg" alt="William Gustafson" width="200"/>
 
 
