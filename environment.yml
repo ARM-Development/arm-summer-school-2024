@@ -27,6 +27,7 @@ dependencies:
   - pathlib
   - scikit-learn
   - radtraq
+  - emc2
   - pip
   - pip:
       - sphinx-book-theme
