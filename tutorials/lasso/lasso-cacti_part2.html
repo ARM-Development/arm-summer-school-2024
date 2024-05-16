@@ -506,6 +506,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrf-model-levels">WRF Model Levels</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-up-the-cross-section-plot">Building up the cross-section plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-an-animation-of-the-cross-section">Make an animation of the cross section</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-video-output">Example video output</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qcloud-qice-for-domain-2-29-jan-2019-eda09-forcing"><strong>QCloud + QIce for Domain 2, 29-Jan-2019, EDA09 Forcing:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qcloud-qice-for-domain-4-29-jan-2019-eda09-forcing"><strong>QCloud + QIce for Domain 4, 29-Jan-2019, EDA09 Forcing:</strong></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -520,7 +525,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="using-lasso-cacti-data-part-2-animation-of-a-cross-section">
 <h1>Using LASSO-CACTI Data, Part 2: Animation of a Cross Section<a class="headerlink" href="#using-lasso-cacti-data-part-2-animation-of-a-cross-section" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <p><strong>Author:</strong> William.Gustafson&#64;pnnl.gov<br />
-<strong>Date:</strong> 3-May-2024</p>
+<strong>Date:</strong> 13-May-2024</p>
 <p>Plotting vertical cross sections involves dealing with vertical coordinate systems, which can vary beteween models and post-processed datasets. For example, LASSO-CACTI includes terrain-following data on raw model levles plus ineterpolated data on pressure and height levels.</p>
 <p><strong>Objectives of this notebook:</strong></p>
 <ol class="arabic simple">
@@ -537,6 +542,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 
+<span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
@@ -553,7 +559,7 @@ document.write(`
 <span class="c1"># Case date and times to plot:</span>
 <span class="n">case_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
 <span class="n">single_time</span> <span class="o">=</span> <span class="n">case_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>  <span class="c1"># time for single-time plots</span>
-<span class="n">time_start</span> <span class="o">=</span> <span class="n">case_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>  <span class="c1"># start and end times for animation</span>
+<span class="n">time_start</span> <span class="o">=</span> <span class="n">case_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>  <span class="c1"># start and end times for animation</span>
 <span class="n">time_end</span> <span class="o">=</span> <span class="n">case_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
 
 <span class="c1"># Simulation selection within the case date:</span>
@@ -566,7 +572,9 @@ document.write(`
 <span class="n">max_hamsl</span> <span class="o">=</span> <span class="mi">11000</span>  <span class="c1"># maximum height to plot</span>
 
 <span class="c1"># Other details:</span>
-<span class="n">rootpath_wrf</span> <span class="o">=</span> <span class="s2">&quot;/gpfs/wolf2/arm/cli120/world-shared/d3m088/cacti/staged_runs&quot;</span>
+<span class="c1"># rootpath_wrf = &quot;/gpfs/wolf2/arm/cli120/world-shared/d3m088/cacti/staged_runs&quot;  # on cumulus</span>
+<span class="n">rootpath_wrf</span> <span class="o">=</span> <span class="s2">&quot;/data/project/ARM_Summer_School_2024_Data/lasso_tutorial/cacti/lasso-cacti&quot;</span>  <span class="c1"># on Jupyter</span>
+
 <span class="n">path_out</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span>  <span class="c1"># path to save animation file</span>
 </pre></div>
 </div>
@@ -640,6 +648,11 @@ We will first just look at a single time to get an idea of how the cross section
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR 1: PROJ: proj_create_from_database: Open of /opt/conda/share/proj failed
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="wrf-model-levels">
@@ -667,14 +680,14 @@ We will first just look at a single time to get an idea of how the cross section
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_140588/2453751272.py:6: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1128/2453751272.py:6: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
   pcm = ax.pcolormesh(lonslice.values, hamsl_xz.values, hamsl_xz.values,
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;HAMLS (m)&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/c990e1eeb6480750960a17ccd9695ca938884b4b399688722a6bce23902f1bf5.png" src="../../_images/c990e1eeb6480750960a17ccd9695ca938884b4b399688722a6bce23902f1bf5.png" />
+<img alt="../../_images/6ddfac603c93ed8ba0cd03f17f2f111ccd1e3a842930463a3e86546f031a3901.png" src="../../_images/6ddfac603c93ed8ba0cd03f17f2f111ccd1e3a842930463a3e86546f031a3901.png" />
 </div>
 </div>
 <p>One must make choices for how to deal with the warping of level surfaces. Depending on one’s needs, you have several options for how to work with the model data:</p>
@@ -703,7 +716,7 @@ We will first just look at a single time to get an idea of how the cross section
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e8d387050b5617daa8834c8d667dd58aaf59673f089b6398a020baf2e37cc4c0.png" src="../../_images/e8d387050b5617daa8834c8d667dd58aaf59673f089b6398a020baf2e37cc4c0.png" />
+<img alt="../../_images/a3eff385d2db58fcc01ecfc819b0631ba9a528c05c372f5148503d7dc2e55c48.png" src="../../_images/a3eff385d2db58fcc01ecfc819b0631ba9a528c05c372f5148503d7dc2e55c48.png" />
 </div>
 </div>
 <p>The above plots are useful, but they have some limitations. For example, treating the raw model levels as flat surfaces hides the mountain. And, labeling levels by index makes it hard to really know how tall the cloud is.
@@ -739,11 +752,11 @@ The plot on the right solves these two issues, but the limited number of levels 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_140588/1363436238.py:6: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1128/1363436238.py:6: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
   pcm = ax.pcolormesh(lonslice.values, hamsl_raw.values, plotdata_raw.values,
 </pre></div>
 </div>
-<img alt="../../_images/2da5a3ea7ca889b409c92cd204b9e26c7c35b3e017f134b3670f25a42bb9952f.png" src="../../_images/2da5a3ea7ca889b409c92cd204b9e26c7c35b3e017f134b3670f25a42bb9952f.png" />
+<img alt="../../_images/04f169a76ba2ec01e51f2bb329a4c3de8173665923af0b01c5726626ad977d7f.png" src="../../_images/04f169a76ba2ec01e51f2bb329a4c3de8173665923af0b01c5726626ad977d7f.png" />
 </div>
 </div>
 </section>
@@ -880,7 +893,7 @@ The plot on the right solves these two issues, but the limited number of levels 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_140588/2070819929.py:35: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1128/2070819929.py:35: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
   pcm = ax.pcolormesh(lonslice.values, hamsl_raw.isel(Time=0).values, plotdata_raw.isel(Time=0).values,
 </pre></div>
 </div>
@@ -910,12 +923,50 @@ plotting frame  21
 plotting frame  22
 plotting frame  23
 plotting frame  24
+plotting frame  25
+plotting frame  26
+plotting frame  27
+plotting frame  28
+plotting frame  29
+plotting frame  30
+plotting frame  31
+plotting frame  32
+plotting frame  33
+plotting frame  34
+plotting frame  35
+plotting frame  36
+plotting frame  37
+plotting frame  38
+plotting frame  39
+plotting frame  40
+plotting frame  41
+plotting frame  42
+plotting frame  43
+plotting frame  44
+plotting frame  45
+plotting frame  46
+plotting frame  47
+plotting frame  48
 plotting frame  0
 </pre></div>
 </div>
-<img alt="../../_images/48d7a074f99ac49517f808c8bf6d6d2328949d20281216310642155cc14f92f0.png" src="../../_images/48d7a074f99ac49517f808c8bf6d6d2328949d20281216310642155cc14f92f0.png" />
+<img alt="../../_images/bf78205318fff7616f8682fef84beea23801d1c84d5ddbc06c70029ec6e18410.png" src="../../_images/bf78205318fff7616f8682fef84beea23801d1c84d5ddbc06c70029ec6e18410.png" />
 </div>
 </div>
+</section>
+<section id="example-video-output">
+<h2>Example video output<a class="headerlink" href="#example-video-output" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
+<p>Here are two example renderings of the above animation, one for domain 2 and the other for domain 4.</p>
+<section id="qcloud-qice-for-domain-2-29-jan-2019-eda09-forcing">
+<h3><strong>QCloud + QIce for Domain 2, 29-Jan-2019, EDA09 Forcing:</strong><a class="headerlink" href="#qcloud-qice-for-domain-2-29-jan-2019-eda09-forcing" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<p><a class="reference download internal" download="" href="../../_downloads/dd1c01788b552c27392dcbf9f19b6eb0/corlasso_anim_qci_2019012900eda09d2_base.mp4"><span class="xref download myst">corlasso_anim_qci_2019012900eda09d2_base.mp4</span></a><br />
+<video src="../images/tutorial_lasso/corlasso_anim_qci_2019012900eda09d2_base.mp4" controls></video></p>
+</section>
+<section id="qcloud-qice-for-domain-4-29-jan-2019-eda09-forcing">
+<h3><strong>QCloud + QIce for Domain 4, 29-Jan-2019, EDA09 Forcing:</strong><a class="headerlink" href="#qcloud-qice-for-domain-4-29-jan-2019-eda09-forcing" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<p><a class="reference download internal" download="" href="../../_downloads/a5be32b86b4b5ec8a6ee22c3ed9d831b/corlasso_anim_qci_2019012900eda09d4_base.mp4"><span class="xref download myst">corlasso_anim_qci_2019012900eda09d4_base.mp4</span></a><br />
+<video src="../images/tutorial_lasso/corlasso_anim_qci_2019012900eda09d4_base.mp4" controls></video></p>
+</section>
 </section>
 </section>
 
@@ -928,16 +979,16 @@ plotting frame  0
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./tutorials/lasso"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
@@ -987,6 +1038,11 @@ plotting frame  0
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrf-model-levels">WRF Model Levels</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-up-the-cross-section-plot">Building up the cross-section plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-an-animation-of-the-cross-section">Make an animation of the cross section</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-video-output">Example video output</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qcloud-qice-for-domain-2-29-jan-2019-eda09-forcing"><strong>QCloud + QIce for Domain 2, 29-Jan-2019, EDA09 Forcing:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qcloud-qice-for-domain-4-29-jan-2019-eda09-forcing"><strong>QCloud + QIce for Domain 4, 29-Jan-2019, EDA09 Forcing:</strong></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
