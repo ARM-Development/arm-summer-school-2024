@@ -4,13 +4,15 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import pathlib
 import glob
+import xarray as xr
+import xwrf
 
 ## for questions, please contact
 ## Florian Tornow: ft2544@columbia.edu
 ## Tim Juliano: tjuliano@ucar.edu
 ## Ann Fridlind: ann.fridlind@nasa.gov
 
-PATH_OBS = '/gpfs/wolf2/arm/atm124/world-shared/arm-summer-school-2024/comble-mip/'
+PATH_OBS = '/data/project/ARM_Summer_School_2024_Data/comble-mip/data_files/'
 
 
 def sat_pres(x):
@@ -237,9 +239,9 @@ def load_kazrkollias(case='20200313',t_filter = 1.,PATH=PATH_OBS,aux_dat=pd.Data
     
     if aux_dat.shape[0] > 0:
         print('KAZR (Kollias): here using auxiliary field to estimate cloud-top temperature')
-        aux_dat['zdiff'] = np.abs(aux_dat['zf'] - np.float(p_df['zi']))
-        aux_dat['zdiff.25'] = np.abs(aux_dat['zf'] - np.float(p_df['zi.25']))
-        aux_dat['zdiff.75'] = np.abs(aux_dat['zf'] - np.float(p_df['zi.75']))
+        aux_dat['zdiff'] = np.abs(aux_dat['zf'] - float(p_df['zi']))
+        aux_dat['zdiff.25'] = np.abs(aux_dat['zf'] - float(p_df['zi.25']))
+        aux_dat['zdiff.75'] = np.abs(aux_dat['zf'] - float(p_df['zi.75']))
         p_df['ctt'] = np.mean(aux_dat.loc[aux_dat['zdiff'] < 10,'ta']) - 273.15
         p_df['ctt.25'] = np.max(aux_dat.loc[aux_dat['zdiff.25'] < 10,'ta']) - 273.15
         p_df['ctt.75'] = np.min(aux_dat.loc[aux_dat['zdiff.75'] < 10,'ta']) - 273.15
