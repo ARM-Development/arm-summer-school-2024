@@ -161,7 +161,7 @@ The answers to each question are shown in the output below.
 ? What is your preferred protocol for Git operations? HTTPS
 ? Authenticate Git with your GitHub credentials? Yes
 ? How would you like to authenticate GitHub CLI? Paste an authentication token
-Tip: you can generate a Personal Access Token here https://github.com/settings/tokens
+Tip: you can generate a Personal Access Token here https://github.com/settings/tokens?type=beta
 The minimum required scopes are 'repo', 'read:org', 'workflow'.
 ? Paste your authentication token: ****************************************
 - gh config set -h github.com git_protocol https
