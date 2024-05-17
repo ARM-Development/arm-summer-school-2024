@@ -37,3 +37,4 @@ parts:
         - file: tutorials/emc2/InstrumentSimulatorsForModelEvaluation.ipynb
         - file: tutorials/microhh/analyze_microhh
         - file: tutorials/machine_learning/ARM_DQO_Spike_Detection
+        - file: tutorials/pyart/sail_qpe_grid
