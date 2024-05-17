@@ -579,7 +579,7 @@ document.write(`
 <h1>Preview DHARMA simulation<a class="headerlink" href="#preview-dharma-simulation" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;emc2_prep.nc&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;/data/project/ARM_Summer_School_2024_Data/emc2/emc2_prep.nc&#39;</span><span class="p">)</span>
 <span class="n">ds</span>
 </pre></div>
 </div>
@@ -1069,7 +1069,7 @@ Data variables: (12/23)
 <p>First, we will use EMC^2’s Model structure to load the DHARMA data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dharma</span> <span class="o">=</span> <span class="n">emc2</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">DHARMA</span><span class="p">(</span><span class="s1">&#39;emc2_prep.nc&#39;</span><span class="p">,</span> <span class="n">single_pi_class</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dharma</span> <span class="o">=</span> <span class="n">emc2</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">DHARMA</span><span class="p">(</span><span class="s1">&#39;/data/project/ARM_Summer_School_2024_Data/emc2/emc2_prep.nc&#39;</span><span class="p">,</span> <span class="n">single_pi_class</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3197,7 +3197,7 @@ Data variables: (12/67)
 <p>Now let’s open up the KAZR observations for the simulated time period. In this case, we can just use xarray to open and view the dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kazr_ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;anxkazrcfrgeqcM1.b1.20200313.180003.nc&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kazr_ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;/data/project/ARM_Summer_School_2024_Data/emc2/anxkazrcfrgeqcM1.b1.20200313.180003.nc&#39;</span><span class="p">)</span>
 <span class="n">kazr_ds</span>
 </pre></div>
 </div>
@@ -3679,7 +3679,7 @@ Attributes: (12/33)
 <p>Here, the most intense precipitation is located at (-11 km, -8 km).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">&quot;emc2_prep_2020-03-13_18:00:00.nc&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">&quot;/data/project/ARM_Summer_School_2024_Data/emc2/emc2_prep_2020-03-13_18:00:00.nc&quot;</span><span class="p">)</span>
 <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;qpi&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">hgt</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -4571,8 +4571,8 @@ Done! total processing time = 42.88s
 <p>In addition, another tip to process the full domain would be to subset the domain into 4-16 rectangular portions then concatenatethe results. To process only one subset of the domain, use the xarray .sel operator to do so in this fashion. This code will process the bottom left portion of the domain. Expanding this code and concatenating the results is left as an exercise for the student.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;emc2_prep.nc&#39;</span><span class="p">)</span>
-<span class="n">dharma</span> <span class="o">=</span> <span class="n">emc2</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">DHARMA</span><span class="p">(</span><span class="s1">&#39;emc2_prep.nc&#39;</span><span class="p">,</span> <span class="n">single_pi_class</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;/data/project/ARM_Summer_School_2024_Data/emc2/emc2_prep.nc&#39;</span><span class="p">)</span>
+<span class="n">dharma</span> <span class="o">=</span> <span class="n">emc2</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">DHARMA</span><span class="p">(</span><span class="s1">&#39;/data/project/ARM_Summer_School_2024_Data/emc2/emc2_prep.nc&#39;</span><span class="p">,</span> <span class="n">single_pi_class</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">dharma</span><span class="o">.</span><span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mf">12500.</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mf">12500.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">))</span> 
 <span class="n">dharma</span><span class="o">.</span><span class="n">ds</span> <span class="o">=</span> <span class="n">dharma</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">time_lat_lon</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">])</span>
 <span class="n">KAZR</span> <span class="o">=</span> <span class="n">emc2</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">instruments</span><span class="o">.</span><span class="n">KAZR</span><span class="p">(</span><span class="s1">&#39;nsa&#39;</span><span class="p">)</span>
