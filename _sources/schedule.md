@@ -48,7 +48,7 @@
 | Time                 | Topic                                  | Presenter(s)                       |
 | :---:                |    :----:                              |    :---:                           |
 | 08:30 AM - 09:30 AM  | [AI/Machine Learning for Data Quality](tutorials/machine_learning/ARM_DQO_Spike_Detection.ipynb)   | Mia Li                             |
-| 09:30 AM - 10:00 AM  | Radar Data Retrievals                  | Joe O'Brien                        |
+| 09:30 AM - 10:00 AM  | [Radar Data Retrievals](tutorials/pyart/sail_qpe_grid.ipynb)                  | Joe O'Brien                        |
 | 10:00 AM - 10:30 AM  | Coffee Break                           |                                    |
 | 10:30 AM - 12:00 PM  | Office Hours: How is it going?         |                                    |
 | 12:00 PM - 01:00 PM  | Working Lunch: Installing Local Python | Max Grover                         |

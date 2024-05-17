@@ -16,3 +16,10 @@ time you log in.
 | [...and LASSO-ShCu part 2](./lasso/lasso-cacti_part2.ipynb)                                        |
 | [Introduction to LASSO-CACTI](./lasso/lasso-cacti.ipynb)                                           |
 | [...and LASSO-CACTI part 2](./lasso/lasso-cacti_part2.ipynb)                                       |
+| [Introduction to xwrf](./xarray/xwrf-xarray-intro.ipynb)                                           |
+| [COMBLE-MIP](./comble/comble-mip-tutorial.ipynb)                                                   |
+| [Harnessing Instrument Simulators for Model Evalution](./emc2/InstrumentSimulatorsForModelEvaluation.ipynb) |
+| [Analyze microhh LES data](./microhh/manalyze_microhh.ipynb)                                       |
+| [ARM DQ Office ML Spike Detection](./machine_learning/ARM_DQO_Spike_Detection.ipynb)               |
+| [Snowfall Retrievals from SAIL X-Band Radar](./pyart/sail_qpe_grid.ipynb)                          |
+
