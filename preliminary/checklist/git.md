@@ -73,7 +73,7 @@ However, a better, more secure practice is to use a GitHub Personal Access Token
 more customizable permissions and can be revoked without affecting your main GitHub user
 account password.
 
-Take a moment to work through the instructions on the [GitHub personal access tokens](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) page. For this hackweek, you need to check the **repo**, **admin:org**, and **workflow** scope. Make sure you select the "creating-a-fine-grained-personal-access-token" option.
+Take a moment to work through the instructions on the [GitHub personal access tokens](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) page. Make sure you select the "classic" option. **Do not use the fine-grained personal access token option.
 
 Screenshot from github.com setting up the token:
 ![github-token](../../images/github-token.png)
@@ -111,7 +111,7 @@ of your mouse is accessible on the JupyterHub by using the 'Shift' key.
 ```
 
 ```shell
-Cloning into 'github_setup_check'...
+Cloning into 'check_github_setup'...
 Username for 'https://github.com': <GitHub Username>
 Password for 'https://attendee@github.com':
 remote: Enumerating objects: 3, done.
@@ -161,7 +161,7 @@ The answers to each question are shown in the output below.
 ? What is your preferred protocol for Git operations? HTTPS
 ? Authenticate Git with your GitHub credentials? Yes
 ? How would you like to authenticate GitHub CLI? Paste an authentication token
-Tip: you can generate a Personal Access Token here https://github.com/settings/tokens?type=beta
+Tip: you can generate a Personal Access Token here https://github.com/settings/tokens
 The minimum required scopes are 'repo', 'read:org', 'workflow'.
 ? Paste your authentication token: ****************************************
 - gh config set -h github.com git_protocol https
