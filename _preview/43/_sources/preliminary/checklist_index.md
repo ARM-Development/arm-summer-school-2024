@@ -58,7 +58,7 @@ If this is your first time accessing the ARM Jupyterhub, then please follow the 
 When filling out the form, be sure to complete the entries as follows:
 
 * **Visitor Role**: *Collaborator*
-* **Resources**: *ARM Data Center Enhanced Jupyterhub Access*
+* **Resources**: *ARM ADC JupyterHub Workshop*
 * **Justification**: *Participation in the ARM Summer School*
 * **Start Date**: May 19
 * **End Date**: May 24
