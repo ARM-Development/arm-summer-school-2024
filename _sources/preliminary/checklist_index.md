@@ -60,8 +60,8 @@ When filling out the form, be sure to complete the entries as follows:
 * **Visitor Role**: *Collaborator*
 * **Resources**: *ARM Data Center Enhanced Jupyterhub Access*
 * **Justification**: *Participation in the ARM Summer School*
-* **Start Date**: *Today's date*
-* **End Date**: *1 year from today's date*
+* **Start Date**: May 19
+* **End Date**: May 24
 
 
 ### Git
