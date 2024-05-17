@@ -12,3 +12,7 @@ time you log in.
 |----------------------------------------------------------------------------------------------------|
 | [Introduction to ARM Radar Data with Py-ART](./pyart/pyart-basics.ipynb)                           |
 | [Introduction to Xarray](./xarray/xarray-intro.ipynb)                                              |
+| [Introduction to LASSO-ShCu](./lasso/lasso-shcu.ipynb)                                             |
+| [...and LASSO-ShCu part 2](./lasso/lasso-cacti_part2.ipynb)                                        |
+| [Introduction to LASSO-CACTI](./lasso/lasso-cacti.ipynb)                                           |
+| [...and LASSO-CACTI part 2](./lasso/lasso-cacti_part2.ipynb)                                       |
