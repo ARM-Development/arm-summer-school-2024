@@ -15,7 +15,7 @@
 | 10:00 AM - 11:00 AM  | [Intro to ARM Data Workbench](https://docs.google.com/presentation/d/1v8d_Fd6gqKap2MyonIx9YeTSakY_pUAL/edit?usp=sharing&ouid=104304750518137712212&rtpof=true&sd=true)            | Sujata Goswami + Mike Giansiracusa |
 | 11:00 AM - 12:00 PM  | [Intro to ARM Open Source Software](https://docs.google.com/presentation/d/1e4IAEWNxw2ly8HTMcuz4fLhwpBNcrg2D/edit?usp=sharing&ouid=104304750518137712212&rtpof=true&sd=true)      | Scott Collis + Joe O'Brien         |
 | 12:00 PM - 01:00 PM  | Working Lunch: Elevator Pitch Intros   | Max Grover                         |
-| 01:00 PM - 01:45 PM  | [Intro to COMBLE-MIP](https://docs.google.com/presentation/d/1v1WGTEhguSBBQ_lAdj_9c85YpJwHDPqy/edit?usp=sharing&ouid=104304750518137712212&rtpof=true&sd=true)                    | Tim Juliano                        |
+| 01:00 PM - 01:45 PM  | [Intro to COMBLE-MIP](https://docs.google.com/presentation/d/1pXFU-2K4PDwpAY9vHqQ-3pIBn0uFg-8M/edit?usp=sharing&ouid=109458928369860454495&rtpof=true&sd=true)                    | Tim Juliano                        |
 | 01:45 PM - 02:30 PM  | [Intro to LASSO](https://docs.google.com/presentation/d/1I4coa4yfnGot2Z_ksSxk0jIIu8X-WrGK/edit?usp=sharing&ouid=104304750518137712212&rtpof=true&sd=true)                         | William Gustafson                  |
 | 02:30 PM - 03:00 PM  | Coffee Break                           |                                    |
 | 03:00 PM - 03:45 PM  | [Intro to SAIL and WRF Model Data](https://docs.google.com/presentation/d/1bnRNTT-cxB_tRSeWcEfbYGEbqqROMsve/edit?usp=sharing&ouid=104304750518137712212&rtpof=true&sd=true)       | Dan Feldman                        |
