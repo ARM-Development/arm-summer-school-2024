@@ -65,7 +65,7 @@
     <link rel="prev" title="Introduction to xwrf" href="../xarray/xwrf-xarray-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="17 May 2024"/>
+    <meta name="docbuild:last-update" content="20 May 2024"/>
   </head>
   
   
@@ -532,7 +532,11 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="comble-mip-tutorial">
 <h1>COMBLE-MIP Tutorial<a class="headerlink" href="#comble-mip-tutorial" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <ul class="simple">
-<li><p>Please direct any questions to Tim Juliano (NSF NCAR, tjuliano&#64;ucar.edu); updated 5/16/24</p></li>
+<li><p>Please direct any questions to Tim Juliano (NSF NCAR, tjuliano&#64;ucar.edu); updated 5/19/24</p>
+<ul>
+<li><p>Credit to Florian Tornow (Columbia/NASA GISS) and Ann Fridlind (NASA GISS) for develping much of this code <br/><br/></p></li>
+</ul>
+</li>
 <li><p>The below notebook focuses on the DOE-funded Cold-Air Outbreaks in the Marine Boundary Layer Experiment (COMBLE) that took place from 2019-2020. More information about COMBLE can be found in Geerts et al. (2022). <br /><ins>Reference</ins><br />Geerts, B., et al., 2022: The COMBLE campaign: A study of marine boundary layer clouds in Arctic cold-air outbreaks, Bull. Amer. Meteor. Soc, 103, E1371–E1389. https://doi.org/10.1175/BAMS-D-21-0044.1</p></li>
 <li><p>To better understand the fundamental mixed-phase clouds that accompany cold-air outbreaks (CAOs), we initiated the COMBLE Model-Observation Intercomparison Project (MIP) for large-eddy simulation (LES) and single-column models (SCMs) in late 2021. The MIP examines a CAO event on 13 March 2020 that was observed during COMBLE. More details about COMBLE MIP may be found <a class="reference external" href="https://arm-development.github.io/comble-mip/">here</a>.</p></li>
 <li><p>The main goal of this notebook is to become more familiar with working with LES and SCM model outputs and comparing them to observations. Note that the figures below are generated from files that have been post-processed from raw LES outputs in order to be compliant with the COMBLE-MIP specifications. Please see the last section of this notebook for information about working with the raw LES outputs as well as post-processed outputs suitable for use with EMC^2.</p></li>
@@ -1653,7 +1657,7 @@ Attributes: (12/132)
 <p>In addition to the raw model outputs, we have post-processed the WRF and DHARMA outputs for use with EMC^2. Those files may be found at the following paths:</p>
 <ul class="simple">
 <li><p>WRF: <code class="docutils literal notranslate"><span class="pre">/data/project/ARM_Summer_School_2024_Data/comble-mip/output_les/wrf/WRF_Lx25_dx100_FixN_raw/emc2_prep*</span></code></p></li>
-<li><p>DHARMA: <code class="docutils literal notranslate"><span class="pre">/data/project/ARM_Summer_School_2024_Data/comble-mip/output_les/dharma/emc2/emc2_prep*</span></code> \</p></li>
+<li><p>DHARMA: <code class="docutils literal notranslate"><span class="pre">/data/project/ARM_Summer_School_2024_Data/comble-mip/output_les/dharma/emc2/emc2_prep*</span></code></p></li>
 </ul>
 <p>EMC^2-ready files from WRF are available hourly while the three DHARMA files *11521.tgz, *20296.tgz, and *29549.tgz are from 06, 12, and 18 UTC, respectively.</p>
 <p>While we won’t cover how to run EMC^2 with the LES files in this tutorial, Robert Jackson has <a class="reference external" href="https://arm-development.github.io/arm-summer-school-2024/tutorials/emc2/InstrumentSimulatorsForModelEvaluation.html">developed a tutorial covering this topic</a>. <strong>Please go through that tutorial if you are interested in working with EMC^2 for COMBLE-MIP.</strong></p>
@@ -1772,7 +1776,7 @@ By the <a href="https://www.arm.gov/">ARM Open Science</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 17 May 2024.
+  Last updated on 20 May 2024.
   <br/>
 </p>
   </div>
