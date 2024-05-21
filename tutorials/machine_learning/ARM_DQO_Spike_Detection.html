@@ -65,7 +65,7 @@
     <link rel="prev" title="Analyze microhh LES data" href="../microhh/analyze_microhh.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="20 May 2024"/>
+    <meta name="docbuild:last-update" content="21 May 2024"/>
   </head>
   
   
@@ -699,7 +699,8 @@ https://dq.arm.gov/dq-zoom/</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da_normal</span> <span class="o">=</span> <span class="n">ds_normal</span><span class="p">[</span><span class="n">target_variable</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">time_steps</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">diff_normal</span> <span class="o">=</span>  <span class="n">da_normal</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">da_normal</span><span class="p">,</span> <span class="n">shift</span> <span class="o">=</span> <span class="n">time_steps</span><span class="p">)</span> <span class="c1"># See Section 3 Feature Engineering</span>
+<span class="n">diff_normal</span> <span class="o">=</span>  <span class="n">da_normal</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">da_normal</span><span class="p">,</span> <span class="n">shift</span> <span class="o">=</span> <span class="n">time_steps</span><span class="p">)</span> <span class="c1"># See Section 5 Feature Engineering</span>
+<span class="n">diff_normal</span><span class="p">[:</span><span class="n">time_steps</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">time_steps</span>
 </pre></div>
 </div>
 </div>
@@ -1691,7 +1692,7 @@ By the <a href="https://www.arm.gov/">ARM Open Science</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 20 May 2024.
+  Last updated on 21 May 2024.
   <br/>
 </p>
   </div>
