@@ -73,10 +73,10 @@ However, a better, more secure practice is to use a GitHub Personal Access Token
 more customizable permissions and can be revoked without affecting your main GitHub user
 account password.
 
-Take a moment to work through the instructions on the [GitHub personal access tokens](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) page. For this hackweek, you need to check the **repo**, **admin:org**, and **workflow** scope.
+Take a moment to work through the instructions on the [GitHub personal access tokens](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) page. Make sure you select the "classic" option. **Do not use the fine-grained personal access token option.
 
 Screenshot from github.com setting up the token:
-![github-token](../../img/github-token.png)
+![github-token](../../images/github-token.png)
 
 Once you have created your token, be sure to save it on your computer in case
 you need to re-authenticate again. The token will give you access to your
@@ -111,7 +111,7 @@ of your mouse is accessible on the JupyterHub by using the 'Shift' key.
 ```
 
 ```shell
-Cloning into 'github_setup_check'...
+Cloning into 'check_github_setup'...
 Username for 'https://github.com': <GitHub Username>
 Password for 'https://attendee@github.com':
 remote: Enumerating objects: 3, done.

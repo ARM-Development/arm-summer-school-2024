@@ -3,9 +3,8 @@
 ***ARM Summer School 2024: Open Science in the Department of Energy's Atmospheric Radiation Measurement (ARM) User Facility: Connecting State-of-the-Art Models with Diverse Field Campaign Observations***
 
 
-[![badge](https://img.shields.io/static/v1.svg?logo=Jupyter&label=ARM+JupyterHub&message=ACE+Environment&color=blue)](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/arm-ams-short-course-2024&urlpath=lab/tree/arm-ams-short-course-2024/notebooks&branch=main)
-[![nightly-build](https://github.com/ARM-Development/arm-ams-short-course-2024/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ARM-Development/arm-ams-short-course-2024/actions/workflows/nightly-build.yaml)
-[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ARM-Development/arm-ams-short-course-2024/main?labpath=notebooks)
+[![badge](https://img.shields.io/static/v1.svg?logo=Jupyter&label=ARM+JupyterHub&message=ACE+Environment&color=blue)](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/arm-summer-school-2024&urlpath=lab/tree/arm-summer-school-2024/notebooks&branch=main)
+[![nightly-build](https://github.com/ARM-Development/arm-summer-school-2024/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ARM-Development/arm-summer-school-2024/actions/workflows/nightly-build.yaml)
 
 ## Motivation
 
@@ -28,7 +27,7 @@ ARM Summer School 2024 Instructors
 ### Contributors
 
 <a href="https://github.com/ProjectPythia/cookbook-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ARM-Development/arm-ams-short-course-2024" />
+  <img src="https://contrib.rocks/image?repo=ARM-Development/arm-summer-school-2024" />
 </a>
 
 ## Structure
