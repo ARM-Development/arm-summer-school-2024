@@ -25,10 +25,11 @@
 
 | Time                 | Topic                                  | Presenter(s)                       |
 | :---:                |    :----:                              |    :---:                           |
-| 08:30 AM - 09:30 AM  | [Intro to ARM Radar Data Products](https://docs.google.com/presentation/d/14O3OSaZadIvVmZPHa3f5cf52avmp_zxx/edit?usp=sharing&ouid=104304750518137712212&rtpof=true&sd=true)       | Ya-Chien Feng and Joe O'Brien      |
+| 08:30 AM - 09:30 AM  | [AI/Machine Learning for Data Quality](tutorials/machine_learning/ARM_DQO_Spike_Detection.ipynb)   | Mia Li   |
 | 09:30 AM - 10:00 AM  | Coffee Break                           |                                    |
-| 10:00 AM - 12:00 PM  | [Aerosol + Profiling Measurements in ARM](https://docs.google.com/presentation/d/1cqg9WOEoMFUHuW10ajIFyrtJ45Q2mg-k/edit?usp=sharing&ouid=104304750518137712212&rtpof=true&sd=true)| Damao Zhang + Bobby Jackson        |
-| 12:00 PM - 01:00 PM  | Working Lunch: Interactive Plotting    | Max Grover                         |
+| 10:00 AM - 11:00 AM  | [Aerosol + Profiling Measurements in ARM](https://docs.google.com/presentation/d/1cqg9WOEoMFUHuW10ajIFyrtJ45Q2mg-k/edit?usp=sharing&ouid=104304750518137712212&rtpof=true&sd=true)| Damao Zhang + Bobby Jackson        |
+| 11:00 AM - 12:00 PM  | [Intro to ARM Radar Data Products](https://docs.google.com/presentation/d/1D-x3ze1N0UK7elKoqb98MYj3rPr4PXGT/edit?usp=sharing&ouid=104304750518137712212&rtpof=true&sd=true)       | Ya-Chien Feng and Joe O'Brien      |
+| 12:00 PM - 01:00 PM  | [Working Lunch: Intro to xwrf](tutorials/xarray/xwrf-xarray-intro)    | Max Grover                         |
 | 01:00 PM - 05:00 PM  | Break into Groups: Plot your Data!     |                                    |
 
 ## Wednesday May 22, 2024
@@ -47,8 +48,7 @@
 
 | Time                 | Topic                                  | Presenter(s)                       |
 | :---:                |    :----:                              |    :---:                           |
-| 08:30 AM - 09:30 AM  | [AI/Machine Learning for Data Quality](tutorials/machine_learning/ARM_DQO_Spike_Detection.ipynb)   | Mia Li                             |
-| 09:30 AM - 10:00 AM  | [Radar Data Retrievals](tutorials/pyart/sail_qpe_grid.ipynb)                  | Joe O'Brien                        |
+| 08:30 AM - 10:00 AM  | Radar Data Retrievals                  | Joe O'Brien                        |
 | 10:00 AM - 10:30 AM  | Coffee Break                           |                                    |
 | 10:30 AM - 12:00 PM  | Office Hours: How is it going?         |                                    |
 | 12:00 PM - 01:00 PM  | Working Lunch: Installing Local Python | Max Grover                         |
