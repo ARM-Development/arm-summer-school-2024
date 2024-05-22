@@ -66,7 +66,7 @@
     <link rel="prev" title="ARM Data Quality Office ML Spike Detection" href="../machine_learning/ARM_DQO_Spike_Detection.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="21 May 2024"/>
+    <meta name="docbuild:last-update" content="22 May 2024"/>
   </head>
   
   
@@ -511,9 +511,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-helper-functions">Setup Helper Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radar-reflectivity-snowfall-z-s-relationships">Radar Reflectivity - Snowfall (Z-S) Relationships</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-our-z-s-relationships">Define our Z-S Relationships</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-the-available-files">List the Available Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-data-apply-snowfall-retrieval">Read Data + Apply Snowfall Retrieval</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your Turn!</a></li>
 </ul>
             </nav>
         </div>
@@ -564,8 +565,8 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="setup-helper-functions">
-<h2>Setup Helper Functions<a class="headerlink" href="#setup-helper-functions" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
+<section id="radar-reflectivity-snowfall-z-s-relationships">
+<h2>Radar Reflectivity - Snowfall (Z-S) Relationships<a class="headerlink" href="#radar-reflectivity-snowfall-z-s-relationships" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>We setup helper functions to calculate the snowfall retrieval, using following notation:</p>
 <p><span class="math notranslate nohighlight">\(Z = A*S ^ {B}\)</span></p>
 <p>Where:</p>
@@ -581,42 +582,118 @@ document.write(`
 <p>Solving for S, we get:</p>
 <p><span class="math notranslate nohighlight">\(S = swe * (\frac{z}{a})^{1/B}\)</span></p>
 <p>Where z is reflectivity in units of dB (<span class="math notranslate nohighlight">\(z =10^{Z/10}\)</span>)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">snow_rate</span><span class="p">(</span><span class="n">radar</span><span class="p">,</span> <span class="n">swe_ratio</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;snow_z&quot;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Snow rate applied to a pyart.Radar object</span>
-<span class="sd">    </span>
-<span class="sd">    Takes a given Snow Water Equivilent ratio (swe_ratio), A and B value</span>
-<span class="sd">    for the Z-S relationship and creates a radar field similar to DBZ</span>
-<span class="sd">    showing the radar estimated snowfall rate in mm/hr. Then the given</span>
-<span class="sd">    SWE_ratio, A and B are stored in the radar metadata for later </span>
-<span class="sd">    reference.</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Setting up for Z-S relationship:</span>
-    <span class="n">snow_z</span> <span class="o">=</span> <span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="c1"># Convert it from dB to linear units</span>
-    <span class="n">z_lin</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">**</span><span class="p">(</span><span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">/</span><span class="mf">10.</span><span class="p">)</span>
-    <span class="c1"># Apply the Z-S relation.</span>
-    <span class="n">snow_z</span> <span class="o">=</span> <span class="n">swe_ratio</span> <span class="o">*</span> <span class="p">(</span><span class="n">z_lin</span><span class="o">/</span><span class="n">A</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="n">B</span><span class="p">)</span>
-    <span class="c1"># Add the field back to the radar. Use reflectivity as a template</span>
-    <span class="n">radar</span><span class="o">.</span><span class="n">add_field_like</span><span class="p">(</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span>  <span class="n">snow_z</span><span class="p">,</span>
-                         <span class="n">replace_existing</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="c1"># Update units and metadata</span>
-    <span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mm/h&#39;</span>
-    <span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;standard_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;snowfall_rate&#39;</span>
-    <span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;long_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;snowfall_rate_from_z&#39;</span>
-    <span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;valid_min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;valid_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">500</span>
-    <span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;swe_ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">swe_ratio</span>
-    <span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span>
-    <span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span>
-    <span class="k">return</span> <span class="n">radar</span>
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+<section id="define-our-z-s-relationships">
+<h2>Define our Z-S Relationships<a class="headerlink" href="#define-our-z-s-relationships" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
+<p>We start by using the Z-S Relationships Described in <a class="reference external" href="https://doi.org/10.1175/JAMC-D-17-0090.1">Bukovčić et al. (2018)</a>, where we refer to following relationships in Table 1:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Source</p></th>
+<th class="head text-center"><p>Z(S) relation for dry snow</p></th>
+<th class="head text-right"><p>A Coefficient</p></th>
+<th class="head text-center"><p>B Coefficient</p></th>
+<th class="head text-center"><p>Radar Band</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Wolfe and Snider (2012)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {110}S^{2}\)</span></p></td>
+<td class="text-right"><p>110</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>S</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>WSR-88D high plains</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {130}S^{2}\)</span></p></td>
+<td class="text-right"><p>130</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>S</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>WSR-88D Intermountain West</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {40}S^{2}\)</span></p></td>
+<td class="text-right"><p>40</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>S</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Matrosov et al.(2009) Braham(1990)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {67}S^{1.28}\)</span></p></td>
+<td class="text-right"><p>67</p></td>
+<td class="text-center"><p>1.28</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Matrosov et al.(2009) Braham(1990)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {114}S^{1.39}\)</span></p></td>
+<td class="text-right"><p>114</p></td>
+<td class="text-center"><p>1.39</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Matrosov et al.(2009) Braham(1990)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {136}S^{1.3}\)</span></p></td>
+<td class="text-right"><p>136</p></td>
+<td class="text-center"><p>1.3</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Matrosov et al.(2009) Braham(1990)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {28}S^{1.44}\)</span></p></td>
+<td class="text-right"><p>28</p></td>
+<td class="text-center"><p>1.44</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Matrosov et al.(2009) Braham(1990)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {36}S^{1.56}\)</span></p></td>
+<td class="text-right"><p>36</p></td>
+<td class="text-center"><p>1.56</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Matrosov et al.(2009) Braham(1990)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {48}S^{1.45}\)</span></p></td>
+<td class="text-right"><p>48</p></td>
+<td class="text-center"><p>1.45</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Matrosov (1992)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {410}S^{1.6}\)</span></p></td>
+<td class="text-right"><p>410</p></td>
+<td class="text-center"><p>1.6</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Matrosov (1992)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {340}S^{1.6}\)</span></p></td>
+<td class="text-right"><p>340</p></td>
+<td class="text-center"><p>1.75</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Matrosov (1992)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {240}S^{1.6}\)</span></p></td>
+<td class="text-right"><p>240</p></td>
+<td class="text-center"><p>1.95</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Boucher and Wieler (1985)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {229}S^{1.65}\)</span></p></td>
+<td class="text-right"><p>229</p></td>
+<td class="text-center"><p>1.65</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Fujiyoshi et al. (1990)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {427}S^{1.09}\)</span></p></td>
+<td class="text-right"><p>427</p></td>
+<td class="text-center"><p>1.09</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Puhakka (1975)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {1050}S^{2}\)</span></p></td>
+<td class="text-right"><p>1050</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Sekhon and Srivastava (1970)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(Z = {1780}S^{2.21}\)</span></p></td>
+<td class="text-right"><p>1780</p></td>
+<td class="text-center"><p>2.21</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="list-the-available-files">
 <h2>List the Available Files<a class="headerlink" href="#list-the-available-files" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
@@ -631,140 +708,39 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_list</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;../data/sail/radar/gucxprecipradarcmacS2.c1.20220310.011126.nc&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/data/project/ARM_Summer_School_2024_Data/sail/radar/gucxprecipradarcmacS2.c1.20220310.000206.nc&#39;,
+ &#39;/data/project/ARM_Summer_School_2024_Data/sail/radar/gucxprecipradarcmacS2.c1.20220310.000726.nc&#39;,
+ &#39;/data/project/ARM_Summer_School_2024_Data/sail/radar/gucxprecipradarcmacS2.c1.20220310.001246.nc&#39;,
+ &#39;/data/project/ARM_Summer_School_2024_Data/sail/radar/gucxprecipradarcmacS2.c1.20220310.001806.nc&#39;,
+ &#39;/data/project/ARM_Summer_School_2024_Data/sail/radar/gucxprecipradarcmacS2.c1.20220310.002326.nc&#39;,
+ &#39;/data/project/ARM_Summer_School_2024_Data/sail/radar/gucxprecipradarcmacS2.c1.20220310.002846.nc&#39;,
+ &#39;/data/project/ARM_Summer_School_2024_Data/sail/radar/gucxprecipradarcmacS2.c1.20220310.003406.nc&#39;,
+ &#39;/data/project/ARM_Summer_School_2024_Data/sail/radar/gucxprecipradarcmacS2.c1.20220310.003926.nc&#39;,
+ &#39;/data/project/ARM_Summer_School_2024_Data/sail/radar/gucxprecipradarcmacS2.c1.20220310.004446.nc&#39;,
+ &#39;/data/project/ARM_Summer_School_2024_Data/sail/radar/gucxprecipradarcmacS2.c1.20220310.005006.nc&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="read-data-apply-snowfall-retrieval">
-<h2>Read Data + Apply Snowfall Retrieval<a class="headerlink" href="#read-data-apply-snowfall-retrieval" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar</span> <span class="o">=</span> <span class="n">radar</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
+<section id="your-turn">
+<h2>Your Turn!<a class="headerlink" href="#your-turn" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
+<div class="admonition alert alert-success">
+<p class="admonition-title">Question 1 - Easy</p>
+<p>Using material presented this week, apply one of the above relationships to SAIL X-Band radar file and display</p>
 </div>
+<div class="admonition alert alert-warning">
+<p class="admonition-title">Question 2 - Intermediate</p>
+<p>Using the above methodology, calculate the snowfall accumulation for an hour (or day)</p>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar</span> <span class="o">=</span> <span class="n">snow_rate</span><span class="p">(</span><span class="n">radar</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mf">1.28</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;snow_z_new&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jrobrien/micromamba/envs/arm-summer-school-2024-dev/lib/python3.11/site-packages/numpy/ma/core.py:6980: RuntimeWarning: overflow encountered in power
-  result = np.where(m, fa, umath.power(fa, fb)).view(basetype)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check to see if the snowfall retrieval was applied</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;DBZ&#39;,
- &#39;VEL&#39;,
- &#39;WIDTH&#39;,
- &#39;ZDR&#39;,
- &#39;PHIDP&#39;,
- &#39;RHOHV&#39;,
- &#39;NCP&#39;,
- &#39;DBZhv&#39;,
- &#39;cbb_flag&#39;,
- &#39;sounding_temperature&#39;,
- &#39;height&#39;,
- &#39;signal_to_noise_ratio&#39;,
- &#39;velocity_texture&#39;,
- &#39;gate_id&#39;,
- &#39;simulated_velocity&#39;,
- &#39;corrected_velocity&#39;,
- &#39;unfolded_differential_phase&#39;,
- &#39;corrected_differential_phase&#39;,
- &#39;filtered_corrected_differential_phase&#39;,
- &#39;corrected_specific_diff_phase&#39;,
- &#39;filtered_corrected_specific_diff_phase&#39;,
- &#39;corrected_differential_reflectivity&#39;,
- &#39;corrected_reflectivity&#39;,
- &#39;height_over_iso0&#39;,
- &#39;specific_attenuation&#39;,
- &#39;path_integrated_attenuation&#39;,
- &#39;specific_differential_attenuation&#39;,
- &#39;path_integrated_differential_attenuation&#39;,
- &#39;rain_rate_A&#39;,
- &#39;snow_rate_ws2012&#39;,
- &#39;snow_rate_ws88diw&#39;,
- &#39;snow_rate_m2009_1&#39;,
- &#39;snow_rate_m2009_2&#39;,
- &#39;snow_z_new&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarMapDisplay</span><span class="p">(</span><span class="n">radar</span><span class="p">)</span>
-<span class="n">display</span><span class="o">.</span><span class="n">plot_ppi_map</span><span class="p">(</span><span class="s2">&quot;corrected_reflectivity&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jrobrien/micromamba/envs/arm-summer-school-2024-dev/lib/python3.11/site-packages/shapely/set_operations.py:131: RuntimeWarning: invalid value encountered in intersection
-  return lib.intersection(a, b, **kwargs)
-/Users/jrobrien/micromamba/envs/arm-summer-school-2024-dev/lib/python3.11/site-packages/shapely/set_operations.py:131: RuntimeWarning: invalid value encountered in intersection
-  return lib.intersection(a, b, **kwargs)
-</pre></div>
-</div>
-<img alt="../../_images/a5ac9b4685b862e3ba01d00262a14110624b3696e22bf62aeb6ecbf5c44d24fb.png" src="../../_images/a5ac9b4685b862e3ba01d00262a14110624b3696e22bf62aeb6ecbf5c44d24fb.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check to see if the snowfall retrieval was applied</span>
-<span class="c1"># Now display the snowfall rates</span>
-<span class="c1">#-------------------</span>
-<span class="c1"># Plot the Radar PPI</span>
-<span class="c1">#-------------------</span>
-<span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="mf">38.4</span><span class="p">,</span> <span class="mf">39.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">107.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">106.5</span><span class="p">]</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
-<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
-<span class="c1">#ax1 = fig.add_subplot(111)</span>
-
-<span class="n">ax1</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">STATES</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">USCOUNTIES</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-
-<span class="c1"># Create the Radar Display Object</span>
-<span class="n">display</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarMapDisplay</span><span class="p">(</span><span class="n">radar</span><span class="p">)</span>
-
-<span class="c1"># Plot the reflectivty</span>
-<span class="c1"># Note - I did not add the sweep parameter since there is only one sweep per file!</span>
-<span class="n">display</span><span class="o">.</span><span class="n">plot_ppi_map</span><span class="p">(</span><span class="s1">&#39;snow_z_new&#39;</span><span class="p">,</span> 
-                     <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span>
-                     <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-                     <span class="n">vmax</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
-                     <span class="n">min_lat</span><span class="o">=</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                     <span class="n">max_lat</span><span class="o">=</span><span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-                     <span class="n">min_lon</span><span class="o">=</span><span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
-                     <span class="n">max_lon</span><span class="o">=</span><span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
-                     <span class="n">embellish</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                     <span class="n">norm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                     <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/219370a58fcbc1e9097f00155bb12471a8a1fc4fe2d02dbe273e50caf10fbce6.png" src="../../_images/219370a58fcbc1e9097f00155bb12471a8a1fc4fe2d02dbe273e50caf10fbce6.png" />
-</div>
+<div class="admonition alert alert-danger">
+<p class="admonition-title">Question 3 - Hard</p>
+<p>Compare this hourly (or daily) accumulation to WRF output for the same day</p>
 </div>
 </section>
 </section>
@@ -778,16 +754,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-env-.conda-open-science-rockies-2022-dev-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-env-.conda-open-science-rockies-2022-dev-py",
             path: "./tutorials/pyart"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-env-.conda-open-science-rockies-2022-dev-py'</script>
 
                 </article>
               
@@ -824,9 +800,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-helper-functions">Setup Helper Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radar-reflectivity-snowfall-z-s-relationships">Radar Reflectivity - Snowfall (Z-S) Relationships</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-our-z-s-relationships">Define our Z-S Relationships</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-the-available-files">List the Available Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-data-apply-snowfall-retrieval">Read Data + Apply Snowfall Retrieval</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your Turn!</a></li>
 </ul>
   </nav></div>
 
@@ -860,7 +837,7 @@ By the <a href="https://www.arm.gov/">ARM Open Science</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 21 May 2024.
+  Last updated on 22 May 2024.
   <br/>
 </p>
   </div>
