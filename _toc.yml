@@ -20,6 +20,7 @@ parts:
 - caption: Projects
   chapters:
     - file: projects/projects.md
+    - file: projects/project-list.md
 - caption: Tutorials
   chapters:
     - file: tutorials/index
