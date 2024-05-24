@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Snowfall Retrievals from SAIL X-Band Radar &#8212; ARM Open Science Summer School 2024</title>
+    <title>Task: Calculate Snowfall Retrievals from SAIL X-Band Radar &#8212; ARM Open Science Summer School 2024</title>
   
   
   
@@ -63,7 +63,7 @@
     <link rel="icon" href="../../_static/arm_logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Dask Demo" href="../xarray/dask-xarray-demo.html" />
+    <link rel="next" title="Solutions: Snowfall Retrievals from SAIL X-Band Radar" href="sail_qpe_grid_solutions.html" />
     <link rel="prev" title="ARM Data Quality Office ML Spike Detection" href="../machine_learning/ARM_DQO_Spike_Detection.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -267,7 +267,8 @@
 
 
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Snowfall Retrievals from SAIL X-Band Radar</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Task: Calculate Snowfall Retrievals from SAIL X-Band Radar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sail_qpe_grid_solutions.html">Solutions: Snowfall Retrievals from SAIL X-Band Radar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../xarray/dask-xarray-demo.html">Dask Demo</a></li>
 </ul>
 </li>
@@ -504,7 +505,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Snowfall Retrievals from SAIL X-Band Radar</h1>
+    <h1>Task: Calculate Snowfall Retrievals from SAIL X-Band Radar</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -530,44 +531,21 @@ document.write(`
                 <article class="bd-article">
                   
   <p><a class="reference internal" href="../../_images/arm_logo.png"><img alt="ARM Logo" src="../../_images/arm_logo.png" style="width: 500px;" /></a></img></p>
-<section class="tex2jax_ignore mathjax_ignore" id="snowfall-retrievals-from-sail-x-band-radar">
-<h1>Snowfall Retrievals from SAIL X-Band Radar<a class="headerlink" href="#snowfall-retrievals-from-sail-x-band-radar" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
-
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pyart</span>
-<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">from</span> <span class="nn">matplotlib.dates</span> <span class="kn">import</span> <span class="n">DateFormatter</span>
-
-<span class="kn">from</span> <span class="nn">metpy.plots</span> <span class="kn">import</span> <span class="n">USCOUNTIES</span>
-
-<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>## You are using the Python ARM Radar Toolkit (Py-ART), an open source
-## library for working with weather radar data. Py-ART is partly
-## supported by the U.S. Department of Energy as part of the Atmospheric
-## Radiation Measurement (ARM) Climate Research Facility, an Office of
-## Science user facility.
-##
-## If you use this software to prepare a publication, please cite:
-##
-##     JJ Helmus and SM Collis, JORS 2016, doi: 10.5334/jors.119
-</pre></div>
-</div>
-</div>
-</div>
+<section class="tex2jax_ignore mathjax_ignore" id="task-calculate-snowfall-retrievals-from-sail-x-band-radar">
+<h1>Task: Calculate Snowfall Retrievals from SAIL X-Band Radar<a class="headerlink" href="#task-calculate-snowfall-retrievals-from-sail-x-band-radar" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
+<p>import warnings
+warnings.simplefilter(“ignore”, UserWarning)</p>
+<p>import glob
+import os
+import datetime</p>
+<p>import numpy as np
+import matplotlib.pyplot as plt
+import pyart
+import xarray as xr
+from matplotlib.dates import DateFormatter</p>
+<p>from metpy.plots import USCOUNTIES</p>
+<p>import cartopy.crs as ccrs
+import cartopy.feature as cfeature</p>
 <section id="radar-reflectivity-snowfall-z-s-relationships">
 <h2>Radar Reflectivity - Snowfall (Z-S) Relationships<a class="headerlink" href="#radar-reflectivity-snowfall-z-s-relationships" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>We setup helper functions to calculate the snowfall retrieval, using following notation:</p>
@@ -757,16 +735,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-.conda-open-science-rockies-2022-dev-py"
+            mode: "python"
         },
         kernelOptions: {
-            name: "conda-env-.conda-open-science-rockies-2022-dev-py",
+            name: "python3",
             path: "./tutorials/pyart"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-.conda-open-science-rockies-2022-dev-py'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -788,11 +766,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../xarray/dask-xarray-demo.html"
+       href="sail_qpe_grid_solutions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Dask Demo</p>
+        <p class="prev-next-title">Solutions: Snowfall Retrievals from SAIL X-Band Radar</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
