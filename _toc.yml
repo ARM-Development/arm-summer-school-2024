@@ -40,4 +40,5 @@ parts:
         - file: tutorials/microhh/analyze_microhh
         - file: tutorials/machine_learning/ARM_DQO_Spike_Detection
         - file: tutorials/pyart/sail_qpe_grid
+        - file: tutorials/pyart/sail_qpe_grid_solutions
         - file: tutorials/xarray/dask-xarray-demo
