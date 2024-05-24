@@ -37,21 +37,20 @@
 | Time                 | Topic                                  | Presenter(s)                       |
 | :---:                |    :----:                              |    :---:                           |
 | 08:30 AM - 09:30 AM  | An Introduction to LES Modeling        | Thijs Heus                         |
-| 09:30 AM - 10:00 AM  | LES and Climate Modeling with COMBLE   | Ann Fridlind                       |
-| 10:00 AM - 10:30 AM  | Coffee Break                           |                                    |
-| 10:30 AM - 11:15 AM  | [Analyzing Data from LASSO at Scale](tutorials/lasso/lasso-shcu.ipynb)     | Bill Gustafson + Max Grover        |
+| 09:30 AM - 10:00 AM  | Coffee Break                           |                                    |
+| 10:00 AM - 11:15 AM  | [Analyzing Data from LASSO at Scale](tutorials/lasso/lasso-shcu.ipynb)     | Bill Gustafson + Max Grover        |
 | 11:15 AM - 12:00 PM  | [Instrument Simulators 101 with COMBLE](tutorials/emc2/InstrumentSimulatorsForModelEvaluation.ipynb)  | Bobby Jackson                      |
-| 12:00 PM - 01:00 PM  | Working Lunch: Debugging Dask          | Max Grover                         |
+| 12:00 PM - 01:00 PM  | Working Lunch: Installing Python Locally          | Max Grover                         |
 | 01:00 PM - 05:00 PM  | Break into Groups: Ask you Questions!  |                                    |
 
 ## Thursday May 23, 2024
 
 | Time                 | Topic                                  | Presenter(s)                       |
 | :---:                |    :----:                              |    :---:                           |
-| 08:30 AM - 10:00 AM  | Radar Data Retrievals                  | Joe O'Brien                        |
+| 08:30 AM - 10:00 AM  | [Radar Data Retrievals](tutorials/pyart/sail_qpe_grid.ipynb)                  | Joe O'Brien                        |
 | 10:00 AM - 10:30 AM  | Coffee Break                           |                                    |
 | 10:30 AM - 12:00 PM  | Office Hours: How is it going?         |                                    |
-| 12:00 PM - 01:00 PM  | Working Lunch: Installing Local Python | Max Grover                         |
+| 12:00 PM - 01:00 PM  | [Working Lunch: Dask 101](tutorials/xarray/dask-xarray-demo.ipynb) | Max Grover                         |
 | 01:00 PM - 05:00 PM  | Draft Your Presentations + Demos       |                                    |
 
 
@@ -59,9 +58,9 @@
 
 | Time                 | Topic                                  | Presenter(s)                       |
 | :---:                |    :----:                              |    :---:                           |
-| 08:30 AM - 09:00 AM  | Next Steps with the Jupyterhub + ARM   | Mike Giansiracusa                  |
-| 09:00 AM - 09:30 AM  | Survey Time + Coffee                   | Max Grover and Scott Collis        |
-| 10:00 AM - 12:00 PM  | Project Presentations: Notebooks!      |                                    |
+| 08:30 AM - 09:00 AM  | [Next Steps with the Jupyterhub + ARM](https://docs.google.com/presentation/d/1j8AbMfPccv0Q9TY1ilmEKyjtZE_5Ia-z/edit?usp=sharing&ouid=104304750518137712212&rtpof=true&sd=true)   | Mike Giansiracusa                  |
+| 09:00 AM - 09:30 AM  | [LES and Climate Modeling with COMBLE](https://docs.google.com/presentation/d/1awmB1Tfc6m9Idw47mOvP2u4FTNWm4Z61/edit?usp=sharing&ouid=104304750518137712212&rtpof=true&sd=true)   | Ann Fridlind                       |
+| 09:00 AM - 09:30 AM  | [Survey Time + Coffee](https://docs.google.com/presentation/d/1vaI8dCk2aq9_Sx3z511vsTwfi9LodjKt1TFawUVz6VM/edit?usp=sharing)                   | Max Grover and Scott Collis        |
+| 10:00 AM - 12:00 PM  | [Project Presentations: Notebooks!](projects/project-list.md)      |                                    |
 | 12:00 PM - 01:00 PM  | Working Lunch: Contribute to Pythia    | Max Grover                         |
-| 01:00 PM - 02:00 PM  | Project Presentations: Notebooks!      |                                    |
-| 02:00 PM - 02:30 PM  | Closing Remarks                        | Max Grover and Scott Collis        |
+| 01:00 PM - 01:30 PM  | [Closing Remarks](https://docs.google.com/presentation/d/1ByV_azKtvUmzFuzm2Z3N89eOM7Z_lWzT/edit?usp=sharing&ouid=104304750518137712212&rtpof=true&sd=true)      |   Max Grover and Scott Collis              |
