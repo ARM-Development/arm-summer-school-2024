@@ -1,12 +1,10 @@
-cff-version: 1.2.0
-message: "If you use this cookbook, please cite it as below."
-authors:
-  - family-names: Grover
-    given-names: Maxwell
-    orcid: https://orcid.org/0000-0002-0370-8974
-    website: https://github.com/mgrover1
-    affiliation: Argonne National Laboratory
-  - name: "Cookbook Template contributors" # use the 'name' field to acknowledge organizations
-    website: "https://github.com/ProjectPythia/cookbook-template/graphs/contributors"
-title: "ARM AMS Annual Meeting Short Course 2024"
-abstract: "Short course materials for our annual short course, with this specific course focusing on high resolution simulations and observations."
+@article { IntegratingHighResolutionModelingwithDiverseFieldCampaignObservationsthroughanOpenScienceSummerSchool,
+      author = "Maxwell A. Grover and Scott Collis and Daniel Feldman and Ann Fridlind and Ya-Chien Feng and Michael Giansiracusa and Sujata Goswami and William I. Gustafson and Thijs Heus and Robert C. Jackson and Timothy W. Juliano and Lishan Li and Joseph R. O’Brien and Damao Zhang",
+      title = "Integrating High-Resolution Modeling with Diverse Field Campaign Observations through an Open Science Summer School",
+      journal = "Bulletin of the American Meteorological Society",
+      year = "2024",
+      publisher = "American Meteorological Society",
+      address = "Boston MA, USA",
+      doi = "10.1175/BAMS-D-24-0270.1",
+      url = "https://journals.ametsoc.org/view/journals/bams/aop/BAMS-D-24-0270.1/BAMS-D-24-0270.1.xml"
+}
